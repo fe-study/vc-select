@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+	<title>example</title>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            background: rgba(119, 129, 149, 0.8);
+        }
+        .form-group label {
+            font-weight: normal;
+            display: block;
+        }
+        .form-group label:first-of-type { /* 重置组件 */
+            font-weight: normal;
+            display: inline-block;
+        }
+
+        .vc-select .btn-group {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+	<div id="app">
+
+        <vc-select
+            class="vc-select"
+            :name="name"
+            :label="label"
+            :placeholder="placeholder"
+            :options="options"
+            :value.sync="value"
+            :multiple="multiple"
+            :search="search"
+            :close-on-select="cos"
+            :show-select-all-option="showAll"
+            :select-all-option-value="svalue"
+            :select-all-option-label="slabel"
+            :select-all-behavior="behavior"
+        >
+        </vc-select>
+
+        <div class="form-group">
+            <label for="" class="">配置组件渲染时的dom name属性</label>
+            <input type="text" class="form-control" placeholder="name" v-model="name" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的label属性</label>
+            <input type="text" class="form-control" placeholder="label" v-model="label" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的placeholder</label>
+            <input type="text" class="form-control" placeholder="placeholder" v-model="placeholder" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的value,初始化</label>
+            <input type="text" class="form-control" placeholder="value" v-model="value">
+        </div>
+
+        <div class="form-group">
+            <label>是否多选(默认false)</label>
+            <input type="radio" :value="bools.true" name="multiple" v-model="multiple"> 多选模式
+            <input type="radio" :value="bools.false" name="multiple" v-model="multiple"> 单选模式
+        </div>
+
+        <div class="form-group">
+            <label>是否显示搜索组件(默认true)</label>
+            <input type="radio" :value="bools.true" name="search" v-model="search"> 显示搜索框
+            <input type="radio" :value="bools.false" name="search" v-model="search"> 不显示
+        </div>
+
+        <div class="form-group">
+            <label>是否选择后关闭下拉(仅在单选生效,默认true)</label>
+            <input type="radio" :value="bools.true" name="cos" v-model="cos"> 选择后自动关闭下拉
+            <input type="radio" :value="bools.false" name="cos" v-model="cos"> 不自动
+        </div>
+
+        <div class="form-group">
+            <label>是否显示全选(默认false)</label>
+        <label>
+            <input type="radio" :value="bools.true" name="showAll" v-model="showAll"> 显示全选
+            <input type="radio" :value="bools.false" name="showAll" v-model="showAll"> 不显示全选
+        </label>
+        </div>
+
+        <div class="form-group">
+            <label>配置全选的value(默认: '__all__')</label>
+            <input type="text" class="form-control" placeholder="svalue" v-model="svalue" />
+        </div>
+
+        <div class="form-group">
+            <label>配置全选的label</label>
+            <input type="text" class="form-control" placeholder="slabel" v-model="slabel" />
+        </div>
+
+        <div class="form-group">
+            <label>配置全选语义(默认: allChecked 全部选择)</label>
+            <input type="radio" value="allChecked" name="selectAllBehavior" v-model="behavior"> allChecked
+            <input type="radio" value="semantic" name="selectAllBehavior" v-model="behavior"> semantic
+        </div>
+
+	</div>
+	<script src='../dist/example.js'></script>
+</body>
+</html>
