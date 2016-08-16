@@ -1,15 +1,17 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-select",
-  "version": "0.7.0",
+  "version": "0.8.1",
   "description": "a select component based on vue.js & bootstrap",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
+    "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
+    "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
+    "build": "npm run build:dev && npm run build:prod",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
-    "build": " webpack -w --progress --hide-modules ",
-    "publish": "webpack --progress --hide-modules --config webpack.production.js"
+    "publish": "npm build && npm publish"
   },
-  "main": "dist/build.js",
+  "main": "dist/build.min.js",
   "repository": {
       "type": "git",
       "url": "git+https://github.com/iwaimai-bi-fe/vc-select.git"

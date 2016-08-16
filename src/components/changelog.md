@@ -1,7 +1,7 @@
 
   @Vue Component - Select
   Author : IndexXuan(https://github.com/IndexXuan)
-  Version: 0.7.0
+  Version: 0.8.1
 
   @changelog
   0517@v0.0.1: init
@@ -23,3 +23,4 @@
                删除了无用代码，更清晰，代码格式优化，风格处理，待出稳定版，pre release
   0809@v0.7.0: 修复`vm = []`时，未触发reWriteValue逻辑中的任何分支，导致value未进行同步
   0810@v0.8.0: 去除options#coerce方法的冗余兼容，对符合结构的Array直接返回使用，对Object仅做简单转换，对其他直接返回
+  0816@v0.8.1: 增加button的title属性，增强体验

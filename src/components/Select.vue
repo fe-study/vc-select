@@ -7,7 +7,7 @@
                 @click="toggleDropdown"
                 @blur="show = (search ? show : false)"
                 :disabled="disabled"
-                :title="placeholder || selectedItems"
+                :title="selectedItems || placeholder"
             >
                 <span class="btn-placeholder" v-show="showPlaceholder">{{ placeholder }}</span>
                 <span class="btn-content">{{ selectedItems }}</span>
