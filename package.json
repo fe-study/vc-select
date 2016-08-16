@@ -11,7 +11,7 @@
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
     "publish": "npm build && npm publish"
   },
-  "main": "dist/build.min.js",
+  "main": "dist/build.js",
   "repository": {
       "type": "git",
       "url": "git+https://github.com/iwaimai-bi-fe/vc-select.git"
