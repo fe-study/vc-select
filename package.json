@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --inline --hot --quiet",
     "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
     "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
-    "build": "npm run build:dev && npm run build:prod",
+    "build": "npm run build:dev && npm run build:prod && npm run example",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
     "publish": "npm build && npm publish"
   },

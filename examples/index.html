@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="./static/css/bootstrap.min.css">
-	<title>example</title>
+    <title>example</title>
     <style>
         ::-webkit-scrollbar {
             width: 8px;
@@ -29,7 +29,9 @@
     </style>
 </head>
 <body>
-	<div id="app">
+    <h1 align="center">@Vue-component - vc-select</h1>
+
+    <div id="app">
 
         <vc-select
             class="vc-select"
@@ -64,7 +66,7 @@
         </div>
 
         <div class="form-group">
-            <label>配置组件的value,初始化</label>
+            <label>配置组件的value(试试: __all__)</label>
             <input type="text" class="form-control" placeholder="value" v-model="value">
         </div>
 
@@ -110,7 +112,7 @@
             <input type="radio" value="semantic" name="selectAllBehavior" v-model="behavior"> semantic
         </div>
 
-	</div>
-	<script src='../dist/example.js'></script>
+    </div>
+    <script src='../dist/example.js'></script>
 </body>
 </html>
