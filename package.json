@@ -1,13 +1,15 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-select",
-  "version": "0.8.1",
+  "version": "0.8.3",
   "description": "a select component based on vue.js & bootstrap",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
     "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
     "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
-    "build": "npm run build:dev && npm run build:prod && npm run example",
+    "build:example": " webpack --progress --hide-modules --config webpack.example.js",
+    "build": "npm run build:dev && npm run build:prod && npm run build:example",
+    "dev": " webpack -w --progress --hide-modules --config webpack.config.js",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
     "publish": "npm build && npm publish"
   },

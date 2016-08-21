@@ -40,6 +40,13 @@ npm run build:prod
 
 ```
 
+* dev 
+
+```node
+npm run dev 
+
+```
+
 * build example
 
 ```node
