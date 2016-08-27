@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["VueComponentDemo"] = factory();
+		exports["vcSelect"] = factory();
 	else
-		root["VueComponentDemo"] = factory();
+		root["vcSelect"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -11162,7 +11162,7 @@ var _typeof6 = _interopRequireDefault2(_typeof5);
 function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function webpackUniversalModuleDefinition(root, factory) {
-  if (( false ? 'undefined' : (0, _typeof6.default)(exports)) === 'object' && ( false ? 'undefined' : (0, _typeof6.default)(module)) === 'object') module.exports = factory();else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if ((typeof exports === 'undefined' ? 'undefined' : (0, _typeof6.default)(exports)) === 'object') exports["VueComponentsName"] = factory();else root["VueComponentsName"] = factory();
+  if (( false ? 'undefined' : (0, _typeof6.default)(exports)) === 'object' && ( false ? 'undefined' : (0, _typeof6.default)(module)) === 'object') module.exports = factory();else if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if ((typeof exports === 'undefined' ? 'undefined' : (0, _typeof6.default)(exports)) === 'object') exports["vcSelect"] = factory();else root["vcSelect"] = factory();
 })(undefined, function () {
   return (/******/function (modules) {
       // webpackBootstrap
@@ -11239,7 +11239,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       /******/__webpack_require__.p = "/";
       /******/
       /******/ // Load entry module and return exports
-      /******/return __webpack_require__(__webpack_require__.s = 80);
+      /******/return __webpack_require__(__webpack_require__.s = 84);
       /******/
     }(
     /************************************************************************/
@@ -11267,8 +11267,8 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       // to indexed object, toObject with fallback for non-array-like ES3 strings
-      var IObject = __webpack_require__(53),
-          defined = __webpack_require__(14);
+      var IObject = __webpack_require__(54),
+          defined = __webpack_require__(15);
       module.exports = function (it) {
         return IObject(defined(it));
       };
@@ -11276,6 +11276,14 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       /***/
     },
     /* 3 */
+    /***/function (module, exports) {
+
+      var core = module.exports = { version: '2.4.0' };
+      if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+      /***/
+    },
+    /* 4 */
     /***/function (module, exports, __webpack_require__) {
 
       // Thank's IE8 for his funny defineProperty
@@ -11287,12 +11295,12 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 4 */
+    /* 5 */
     /***/function (module, exports, __webpack_require__) {
 
-      var dP = __webpack_require__(5),
-          createDesc = __webpack_require__(12);
-      module.exports = __webpack_require__(3) ? function (object, key, value) {
+      var dP = __webpack_require__(6),
+          createDesc = __webpack_require__(13);
+      module.exports = __webpack_require__(4) ? function (object, key, value) {
         return dP.f(object, key, createDesc(1, value));
       } : function (object, key, value) {
         object[key] = value;
@@ -11301,15 +11309,15 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 5 */
+    /* 6 */
     /***/function (module, exports, __webpack_require__) {
 
-      var anObject = __webpack_require__(10),
+      var anObject = __webpack_require__(11),
           IE8_DOM_DEFINE = __webpack_require__(30),
           toPrimitive = __webpack_require__(24),
           dP = _defineProperty2.default;
 
-      exports.f = __webpack_require__(3) ? _defineProperty2.default : function defineProperty(O, P, Attributes) {
+      exports.f = __webpack_require__(4) ? _defineProperty2.default : function defineProperty(O, P, Attributes) {
         anObject(O);
         P = toPrimitive(P, true);
         anObject(Attributes);
@@ -11323,11 +11331,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 6 */
+    /* 7 */
     /***/function (module, exports, __webpack_require__) {
 
       var store = __webpack_require__(22)('wks'),
-          uid = __webpack_require__(13),
+          uid = __webpack_require__(14),
           _Symbol = __webpack_require__(0).Symbol,
           USE_SYMBOL = typeof _Symbol == 'function';
 
@@ -11336,14 +11344,6 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       };
 
       $exports.store = store;
-
-      /***/
-    },
-    /* 7 */
-    /***/function (module, exports) {
-
-      var core = module.exports = { version: '2.4.0' };
-      if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
       /***/
     },
@@ -11361,30 +11361,6 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       /***/
     },
     /* 9 */
-    /***/function (module, exports, __webpack_require__) {
-
-      // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-      var $keys = __webpack_require__(35),
-          enumBugKeys = __webpack_require__(15);
-
-      module.exports = _keys4.default || function keys(O) {
-        return $keys(O, enumBugKeys);
-      };
-
-      /***/
-    },
-    /* 10 */
-    /***/function (module, exports, __webpack_require__) {
-
-      var isObject = __webpack_require__(11);
-      module.exports = function (it) {
-        if (!isObject(it)) throw TypeError(it + ' is not an object!');
-        return it;
-      };
-
-      /***/
-    },
-    /* 11 */
     /***/function (module, exports) {
 
       module.exports = function (it) {
@@ -11393,57 +11369,37 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 12 */
-    /***/function (module, exports) {
+    /* 10 */
+    /***/function (module, exports, __webpack_require__) {
 
-      module.exports = function (bitmap, value) {
-        return {
-          enumerable: !(bitmap & 1),
-          configurable: !(bitmap & 2),
-          writable: !(bitmap & 4),
-          value: value
-        };
+      // 19.1.2.14 / 15.2.3.14 Object.keys(O)
+      var $keys = __webpack_require__(35),
+          enumBugKeys = __webpack_require__(16);
+
+      module.exports = _keys4.default || function keys(O) {
+        return $keys(O, enumBugKeys);
       };
 
       /***/
     },
-    /* 13 */
-    /***/function (module, exports) {
+    /* 11 */
+    /***/function (module, exports, __webpack_require__) {
 
-      var id = 0,
-          px = Math.random();
-      module.exports = function (key) {
-        return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-      };
-
-      /***/
-    },
-    /* 14 */
-    /***/function (module, exports) {
-
-      // 7.2.1 RequireObjectCoercible(argument)
+      var isObject = __webpack_require__(9);
       module.exports = function (it) {
-        if (it == undefined) throw TypeError("Can't call method on  " + it);
+        if (!isObject(it)) throw TypeError(it + ' is not an object!');
         return it;
       };
 
       /***/
     },
-    /* 15 */
-    /***/function (module, exports) {
-
-      // IE 8- don't enum bug keys
-      module.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
-
-      /***/
-    },
-    /* 16 */
+    /* 12 */
     /***/function (module, exports, __webpack_require__) {
 
       var global = __webpack_require__(0),
-          core = __webpack_require__(7),
-          ctx = __webpack_require__(50),
-          hide = __webpack_require__(4),
+          core = __webpack_require__(3),
+          ctx = __webpack_require__(51),
+          hide = __webpack_require__(5),
           PROTOTYPE = 'prototype';
 
       var $export = function $export(type, name, source) {
@@ -11509,6 +11465,50 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
+    /* 13 */
+    /***/function (module, exports) {
+
+      module.exports = function (bitmap, value) {
+        return {
+          enumerable: !(bitmap & 1),
+          configurable: !(bitmap & 2),
+          writable: !(bitmap & 4),
+          value: value
+        };
+      };
+
+      /***/
+    },
+    /* 14 */
+    /***/function (module, exports) {
+
+      var id = 0,
+          px = Math.random();
+      module.exports = function (key) {
+        return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+      };
+
+      /***/
+    },
+    /* 15 */
+    /***/function (module, exports) {
+
+      // 7.2.1 RequireObjectCoercible(argument)
+      module.exports = function (it) {
+        if (it == undefined) throw TypeError("Can't call method on  " + it);
+        return it;
+      };
+
+      /***/
+    },
+    /* 16 */
+    /***/function (module, exports) {
+
+      // IE 8- don't enum bug keys
+      module.exports = 'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'.split(',');
+
+      /***/
+    },
     /* 17 */
     /***/function (module, exports) {
 
@@ -11533,9 +11533,9 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 20 */
     /***/function (module, exports, __webpack_require__) {
 
-      var def = __webpack_require__(5).f,
+      var def = __webpack_require__(6).f,
           has = __webpack_require__(1),
-          TAG = __webpack_require__(6)('toStringTag');
+          TAG = __webpack_require__(7)('toStringTag');
 
       module.exports = function (it, tag, stat) {
         if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -11547,7 +11547,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       var shared = __webpack_require__(22)('keys'),
-          uid = __webpack_require__(13);
+          uid = __webpack_require__(14);
       module.exports = function (key) {
         return shared[key] || (shared[key] = uid(key));
       };
@@ -11582,7 +11582,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       // 7.1.1 ToPrimitive(input [, PreferredType])
-      var isObject = __webpack_require__(11);
+      var isObject = __webpack_require__(9);
       // instead of the ES6 spec version, we didn't implement @@toPrimitive case
       // and the second argument - flag - preferred type is a string
       module.exports = function (it, S) {
@@ -11600,10 +11600,10 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       var global = __webpack_require__(0),
-          core = __webpack_require__(7),
+          core = __webpack_require__(3),
           LIBRARY = __webpack_require__(18),
           wksExt = __webpack_require__(26),
-          defineProperty = __webpack_require__(5).f;
+          defineProperty = __webpack_require__(6).f;
       module.exports = function (name) {
         var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
         if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -11614,7 +11614,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 26 */
     /***/function (module, exports, __webpack_require__) {
 
-      exports.f = __webpack_require__(6);
+      exports.f = __webpack_require__(7);
 
       /***/
     },,
@@ -11633,7 +11633,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 29 */
     /***/function (module, exports, __webpack_require__) {
 
-      var isObject = __webpack_require__(11),
+      var isObject = __webpack_require__(9),
           document = __webpack_require__(0).document
       // in old IE typeof document.createElement is 'object'
       ,
@@ -11647,7 +11647,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 30 */
     /***/function (module, exports, __webpack_require__) {
 
-      module.exports = !__webpack_require__(3) && !__webpack_require__(8)(function () {
+      module.exports = !__webpack_require__(4) && !__webpack_require__(8)(function () {
         return Object.defineProperty(__webpack_require__(29)('div'), 'a', { get: function get() {
             return 7;
           } }).a != 7;
@@ -11662,15 +11662,15 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       'use strict';
 
       var LIBRARY = __webpack_require__(18),
-          $export = __webpack_require__(16),
+          $export = __webpack_require__(12),
           redefine = __webpack_require__(36),
-          hide = __webpack_require__(4),
+          hide = __webpack_require__(5),
           has = __webpack_require__(1),
           Iterators = __webpack_require__(17),
-          $iterCreate = __webpack_require__(55),
+          $iterCreate = __webpack_require__(57),
           setToStringTag = __webpack_require__(20),
-          getPrototypeOf = __webpack_require__(62),
-          ITERATOR = __webpack_require__(6)('iterator'),
+          getPrototypeOf = __webpack_require__(64),
+          ITERATOR = __webpack_require__(7)('iterator'),
           BUGGY = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
       ,
           FF_ITERATOR = '@@iterator',
@@ -11752,9 +11752,9 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-      var anObject = __webpack_require__(10),
-          dPs = __webpack_require__(59),
-          enumBugKeys = __webpack_require__(15),
+      var anObject = __webpack_require__(11),
+          dPs = __webpack_require__(61),
+          enumBugKeys = __webpack_require__(16),
           IE_PROTO = __webpack_require__(21)('IE_PROTO'),
           Empty = function Empty() {/* empty */},
           PROTOTYPE = 'prototype';
@@ -11768,7 +11768,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             gt = '>',
             iframeDocument;
         iframe.style.display = 'none';
-        __webpack_require__(52).appendChild(iframe);
+        __webpack_require__(53).appendChild(iframe);
         iframe.src = 'javascript:'; // eslint-disable-line no-script-url
         // createDict = iframe.contentWindow.Object;
         // html.removeChild(iframe);
@@ -11801,7 +11801,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
       var $keys = __webpack_require__(35),
-          hiddenKeys = __webpack_require__(15).concat('length', 'prototype');
+          hiddenKeys = __webpack_require__(16).concat('length', 'prototype');
 
       exports.f = _getOwnPropertyNames2.default || function getOwnPropertyNames(O) {
         return $keys(O, hiddenKeys);
@@ -11821,7 +11821,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       var has = __webpack_require__(1),
           toIObject = __webpack_require__(2),
-          arrayIndexOf = __webpack_require__(49)(false),
+          arrayIndexOf = __webpack_require__(50)(false),
           IE_PROTO = __webpack_require__(21)('IE_PROTO');
 
       module.exports = function (object, names) {
@@ -11844,7 +11844,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 36 */
     /***/function (module, exports, __webpack_require__) {
 
-      module.exports = __webpack_require__(4);
+      module.exports = __webpack_require__(5);
 
       /***/
     },
@@ -11852,7 +11852,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       // 7.1.13 ToObject(argument)
-      var defined = __webpack_require__(14);
+      var defined = __webpack_require__(15);
       module.exports = function (it) {
         return Object(defined(it));
       };
@@ -11863,7 +11863,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       __webpack_require__(40);
-      module.exports = __webpack_require__(79);
+      module.exports = __webpack_require__(83);
 
       if (module.exports.__esModule) module.exports = module.exports.default;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(43);
       if (false) {
@@ -12141,8 +12141,8 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       if (false) {
         // When the styles change, update the <style> tags
         if (!content.locals) {
-          module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-9200f2fa&file=Select.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Select.vue", function () {
-            var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-9200f2fa&file=Select.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Select.vue");
+          module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-25cafebe&file=Select.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Select.vue", function () {
+            var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-25cafebe&file=Select.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Select.vue");
             if (typeof newContent === 'string') newContent = [[module.id, newContent, '']];
             update(newContent);
           });
@@ -12163,7 +12163,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
 
       // module
-      exports.push([module.i, ".vc-select-component label.label-item {\n  position: relative;\n  top: 1px;\n}\n.vc-select-component .bs-searchbox {\n  padding: 4px 8px;\n  position: relative;\n}\n.vc-select-component .bs-searchbox input {\n  height: 34px;\n  width: 100%;\n}\n.vc-select-component .bs-searchbox .clear-searchText {\n  visibility: hidden;\n  position: absolute;\n  right: 15px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  opacity: .3;\n}\n.vc-select-component .bs-searchbox:hover .clear-searchText {\n  visibility: visible;\n}\n.vc-select-component .btn-group button.multiselect {\n  /* override multiselect button height */\n  height: 34px;\n  width: 100%;\n  overflow: hidden;\n}\n.vc-select-component .btn-group .dropdown-menu .notify {\n  position: absolute;\n  bottom: 5px;\n  width: 96%;\n  margin: 0 2%;\n  min-height: 26px;\n  padding: 3px 5px;\n  background: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  pointer-events: none;\n  opacity: .9;\n}\n.vc-select-component .dropdown-menu {\n  min-width: 100%;\n  max-height: 400px;\n  overflow: auto;\n  width: auto;\n}\n.vc-select-component .dropdown-menu > li > a:hover {\n  background-color: #1E90FF;\n  color: #fff;\n}\n.vc-select-component .no-content-tips {\n  text-align: center;\n  padding: 10px;\n}\n.vc-select-component div.vselected-panel {\n  padding: 3px 8px 4px;\n  border-bottom: 1px solid #eee;\n}\n.vc-select-component div.vselected-panel a {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  text-align: center;\n  padding: 1px 5px;\n  margin: 0px 5px 3px;\n  margin-left: 0;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  color: #333;\n}\n.vc-select-component div.vselected-panel a span {\n  position: absolute;\n  top: -9px;\n  right: 0px;\n  width: 5px;\n  height: 5px;\n  font-size: 5px;\n  color: #bbb6b6;\n  font-weight: 700;\n}\n", ""]);
+      exports.push([module.i, ".vc-select-component label.label-item {\n  position: relative;\n  top: 1px;\n}\n.vc-select-component .bs-searchbox {\n  padding: 4px 8px;\n  position: relative;\n}\n.vc-select-component .bs-searchbox input {\n  height: 34px;\n  width: 100%;\n}\n.vc-select-component .bs-searchbox .clear-searchText {\n  visibility: hidden;\n  position: absolute;\n  right: 15px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  opacity: .3;\n}\n.vc-select-component .bs-searchbox:hover .clear-searchText {\n  visibility: visible;\n}\n.vc-select-component .btn-group button.multiselect {\n  /* override multiselect button height */\n  height: 34px;\n  width: 100%;\n  overflow: hidden;\n}\n.vc-select-component .btn-group .dropdown-menu .notify {\n  position: absolute;\n  bottom: 5px;\n  width: 96%;\n  margin: 0 2%;\n  min-height: 26px;\n  padding: 3px 5px;\n  background: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  pointer-events: none;\n  opacity: .9;\n}\n.vc-select-component .dropdown-menu {\n  min-width: 100%;\n  overflow: auto;\n  width: auto;\n}\n.vc-select-component .dropdown-menu > li > a:hover {\n  background-color: #1E90FF;\n  color: #fff;\n}\n.vc-select-component .no-content-tips {\n  text-align: center;\n  padding: 10px;\n}\n.vc-select-component div.vselected-panel {\n  padding: 3px 8px 4px;\n  border-bottom: 1px solid #eee;\n}\n.vc-select-component div.vselected-panel a {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  text-align: center;\n  padding: 1px 5px;\n  margin: 0px 5px 3px;\n  margin-left: 0;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  color: #333;\n}\n.vc-select-component div.vselected-panel a span {\n  position: absolute;\n  top: -9px;\n  right: 0px;\n  width: 5px;\n  height: 5px;\n  font-size: 5px;\n  color: #bbb6b6;\n  font-weight: 700;\n}\n", ""]);
 
       // exports
 
@@ -12227,15 +12227,15 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 43 */
     /***/function (module, exports) {
 
-      module.exports = "<div class=\"form-group vc-select-component\">\n        <label class=\"label-item\" v-if=\"label\">{{ label }}</label>\n        <div class=\"btn-group\" :class=\"{ 'open': show }\">\n            <!-- 此处mousedown.stop则可以实现toggle,但是可以同时打开多个select了,反之则不可toggle -->\n            <button v-el:btn type=\"button\" class=\"btn btn-default multiselect dropdown-toggle btn-multipe\"\n                @click=\"toggleDropdown\"\n                @blur=\"show = (search ? show : false)\"\n                :disabled=\"disabled\"\n                :title=\"selectedItems || placeholder\"\n            >\n                <span class=\"btn-placeholder\" v-show=\"showPlaceholder\">{{ placeholder }}</span>\n                <span class=\"btn-content\">{{ selectedItems }}</span>\n                <span class=\"caret\"></span>\n            </button>\n            <ul class=\"dropdown-menu\" @mousedown.stop> <!-- make scrollbar drapable -->\n                <template v-if=\"options.length\">\n                    <li v-if=\"search\" class=\"bs-searchbox\">\n                        <input type=\"text\" @mousedown.stop placeholder=\"搜索\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" />\n                        <span class=\"clear-searchText glyphicon glyphicon-remove-circle\" @mousedown.stop=\"searchText = ''\" aria-hidden=\"true\"></span>\n                    </li>\n                    <div class=\"vselected-panel\" v-show=\"false && showSelectedPanel\">\n                        <a v-for=\"option in selectedOptions\" @dblclick=\"select(option.value)\" v-show=\"$index < maxSelectedPanelCount\" @mousedown.stop style=\"cursor:pointer\">\n                            {{ option.label }}\n                            <span @mousedown.prevent=\"select(option.value)\" class=\"\" v-show=\"includes(option.value)\">&times;</span>\n                        </a>\n                    </div>\n                    <li v-if=\"showSelectAllOption\">\n                        <a @mousedown.prevent=\"select(selectAllOptionValue)\" @mousedown.stop style=\"cursor:pointer\">\n                            {{ selectAllOptionLabel }} \n                            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(selectAllOptionValue)\"></span>\n                        </a>\n                    </li>\n                    <li v-for=\"($index, option) in options | filterBy searchText\">\n                        <a @mousedown.prevent=\"select(option.value)\" @mousedown.stop style=\"cursor:pointer\">\n                            {{ option.label }}\n                            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(option.value)\"></span>\n                        </a>\n                    </li>\n                </template>\n                <slot v-else><div class=\"no-content-tips\">暂无{{ label }}选项</div></slot>\n                <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">(最多选取{{ limit }}个)</div>\n            </ul>\n        </div>\n    </div>";
+      module.exports = "<div class=\"form-group vc-select-component\">\n        <label class=\"label-item\" v-if=\"label\">{{ label }}</label>\n        <div class=\"btn-group\" :class=\"{ 'open': show }\">\n            <!-- 此处mousedown.stop则可以实现toggle,但是可以同时打开多个select了,反之则不可toggle -->\n            <button v-el:btn type=\"button\" class=\"btn btn-default multiselect dropdown-toggle btn-multipe\"\n                @click=\"toggleDropdown\"\n                @blur=\"show = (searchable ? show : false)\"\n                :disabled=\"disabled\"\n                :title=\"selectedItems || placeholder\"\n            >\n                <span class=\"btn-placeholder\" v-show=\"showPlaceholder\">{{ placeholder }}</span>\n                <span class=\"btn-content\">{{ selectedItems }}</span>\n                <span class=\"caret\"></span>\n            </button>\n            <ul class=\"dropdown-menu\" :style=\"{ 'max-height': optionalHeight }\" @mousedown.stop> <!-- make scrollbar drapable -->\n                <template v-if=\"options.length\">\n                    <li v-if=\"searchable\" class=\"bs-searchbox\">\n                        <input type=\"text\" @mousedown.stop placeholder=\"搜索\" v-model=\"searchText\" class=\"form-control\" autocomplete=\"off\" />\n                        <span class=\"clear-searchText glyphicon glyphicon-remove-circle\" @mousedown.stop=\"searchText = ''\" aria-hidden=\"true\"></span>\n                    </li>\n                    <div class=\"vselected-panel\" v-show=\"false && showSelectedPanel\">\n                        <a v-for=\"option in selectedOptions\" @dblclick=\"select(option.value)\" v-show=\"$index < maxSelectedPanelCount\" @mousedown.stop style=\"cursor:pointer\">\n                            {{ option.label }}\n                            <span @mousedown.prevent=\"select(option.value)\" class=\"\" v-show=\"includes(option.value)\">&times;</span>\n                        </a>\n                    </div>\n                    <li v-if=\"showSelectAllOption\">\n                        <a @mousedown.prevent=\"select(selectAllOptionValue)\" @mousedown.stop style=\"cursor:pointer\">\n                            {{ selectAllOptionLabel }} \n                            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(selectAllOptionValue)\"></span>\n                        </a>\n                    </li>\n                    <li v-for=\"($index, option) in options | filterBy searchText\">\n                        <a @mousedown.prevent=\"select(option.value)\" @mousedown.stop style=\"cursor:pointer\">\n                            {{ option.label }}\n                            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(option.value)\"></span>\n                        </a>\n                    </li>\n                </template>\n                <slot v-else><div class=\"no-content-tips\">暂无{{ label }}选项</div></slot>\n                <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">(最多选取{{ limit }}个)</div>\n            </ul>\n        </div>\n    </div>";
 
       /***/
     },
     /* 44 */
     /***/function (module, exports, __webpack_require__) {
 
-      __webpack_require__(68);
-      module.exports = __webpack_require__(7).Object.keys;
+      __webpack_require__(70);
+      module.exports = __webpack_require__(3).Number.isInteger;
 
       /***/
     },
@@ -12243,23 +12243,31 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /***/function (module, exports, __webpack_require__) {
 
       __webpack_require__(71);
-      __webpack_require__(69);
-      __webpack_require__(72);
-      __webpack_require__(73);
-      module.exports = __webpack_require__(7).Symbol;
+      module.exports = __webpack_require__(3).Object.keys;
 
       /***/
     },
     /* 46 */
     /***/function (module, exports, __webpack_require__) {
 
-      __webpack_require__(70);
       __webpack_require__(74);
-      module.exports = __webpack_require__(26).f('iterator');
+      __webpack_require__(72);
+      __webpack_require__(75);
+      __webpack_require__(76);
+      module.exports = __webpack_require__(3).Symbol;
 
       /***/
     },
     /* 47 */
+    /***/function (module, exports, __webpack_require__) {
+
+      __webpack_require__(73);
+      __webpack_require__(77);
+      module.exports = __webpack_require__(26).f('iterator');
+
+      /***/
+    },
+    /* 48 */
     /***/function (module, exports) {
 
       module.exports = function (it) {
@@ -12269,21 +12277,21 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 48 */
+    /* 49 */
     /***/function (module, exports) {
 
       module.exports = function () {/* empty */};
 
       /***/
     },
-    /* 49 */
+    /* 50 */
     /***/function (module, exports, __webpack_require__) {
 
       // false -> Array#indexOf
       // true  -> Array#includes
       var toIObject = __webpack_require__(2),
-          toLength = __webpack_require__(66),
-          toIndex = __webpack_require__(65);
+          toLength = __webpack_require__(68),
+          toIndex = __webpack_require__(67);
       module.exports = function (IS_INCLUDES) {
         return function ($this, el, fromIndex) {
           var O = toIObject($this),
@@ -12305,11 +12313,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 50 */
+    /* 51 */
     /***/function (module, exports, __webpack_require__) {
 
       // optional / simple context binding
-      var aFunction = __webpack_require__(47);
+      var aFunction = __webpack_require__(48);
       module.exports = function (fn, that, length) {
         aFunction(fn);
         if (that === undefined) return fn;
@@ -12334,11 +12342,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 51 */
+    /* 52 */
     /***/function (module, exports, __webpack_require__) {
 
       // all enumerable object keys, includes symbols
-      var getKeys = __webpack_require__(9),
+      var getKeys = __webpack_require__(10),
           gOPS = __webpack_require__(34),
           pIE = __webpack_require__(19);
       module.exports = function (it) {
@@ -12357,14 +12365,14 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 52 */
+    /* 53 */
     /***/function (module, exports, __webpack_require__) {
 
       module.exports = __webpack_require__(0).document && document.documentElement;
 
       /***/
     },
-    /* 53 */
+    /* 54 */
     /***/function (module, exports, __webpack_require__) {
 
       // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -12375,7 +12383,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 54 */
+    /* 55 */
     /***/function (module, exports, __webpack_require__) {
 
       // 7.2.2 IsArray(argument)
@@ -12386,19 +12394,31 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 55 */
+    /* 56 */
+    /***/function (module, exports, __webpack_require__) {
+
+      // 20.1.2.3 Number.isInteger(number)
+      var isObject = __webpack_require__(9),
+          floor = Math.floor;
+      module.exports = function isInteger(it) {
+        return !isObject(it) && isFinite(it) && floor(it) === it;
+      };
+
+      /***/
+    },
+    /* 57 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
       'use strict';
 
       var create = __webpack_require__(32),
-          descriptor = __webpack_require__(12),
+          descriptor = __webpack_require__(13),
           setToStringTag = __webpack_require__(20),
           IteratorPrototype = {};
 
       // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-      __webpack_require__(4)(IteratorPrototype, __webpack_require__(6)('iterator'), function () {
+      __webpack_require__(5)(IteratorPrototype, __webpack_require__(7)('iterator'), function () {
         return this;
       });
 
@@ -12409,7 +12429,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 56 */
+    /* 58 */
     /***/function (module, exports) {
 
       module.exports = function (done, value) {
@@ -12418,10 +12438,10 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 57 */
+    /* 59 */
     /***/function (module, exports, __webpack_require__) {
 
-      var getKeys = __webpack_require__(9),
+      var getKeys = __webpack_require__(10),
           toIObject = __webpack_require__(2);
       module.exports = function (object, el) {
         var O = toIObject(object),
@@ -12436,13 +12456,13 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 58 */
+    /* 60 */
     /***/function (module, exports, __webpack_require__) {
 
-      var META = __webpack_require__(13)('meta'),
-          isObject = __webpack_require__(11),
+      var META = __webpack_require__(14)('meta'),
+          isObject = __webpack_require__(9),
           has = __webpack_require__(1),
-          setDesc = __webpack_require__(5).f,
+          setDesc = __webpack_require__(6).f,
           id = 0;
       var isExtensible = _isExtensible2.default || function () {
         return true;
@@ -12495,14 +12515,14 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 59 */
+    /* 61 */
     /***/function (module, exports, __webpack_require__) {
 
-      var dP = __webpack_require__(5),
-          anObject = __webpack_require__(10),
-          getKeys = __webpack_require__(9);
+      var dP = __webpack_require__(6),
+          anObject = __webpack_require__(11),
+          getKeys = __webpack_require__(10);
 
-      module.exports = __webpack_require__(3) ? _defineProperties2.default : function defineProperties(O, Properties) {
+      module.exports = __webpack_require__(4) ? _defineProperties2.default : function defineProperties(O, Properties) {
         anObject(O);
         var keys = getKeys(Properties),
             length = keys.length,
@@ -12515,18 +12535,18 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 60 */
+    /* 62 */
     /***/function (module, exports, __webpack_require__) {
 
       var pIE = __webpack_require__(19),
-          createDesc = __webpack_require__(12),
+          createDesc = __webpack_require__(13),
           toIObject = __webpack_require__(2),
           toPrimitive = __webpack_require__(24),
           has = __webpack_require__(1),
           IE8_DOM_DEFINE = __webpack_require__(30),
           gOPD = _getOwnPropertyDescriptor2.default;
 
-      exports.f = __webpack_require__(3) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+      exports.f = __webpack_require__(4) ? gOPD : function getOwnPropertyDescriptor(O, P) {
         O = toIObject(O);
         P = toPrimitive(P, true);
         if (IE8_DOM_DEFINE) try {
@@ -12537,7 +12557,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 61 */
+    /* 63 */
     /***/function (module, exports, __webpack_require__) {
 
       // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -12561,7 +12581,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 62 */
+    /* 64 */
     /***/function (module, exports, __webpack_require__) {
 
       // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
@@ -12580,12 +12600,12 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 63 */
+    /* 65 */
     /***/function (module, exports, __webpack_require__) {
 
       // most Object methods by ES6 should accept primitives
-      var $export = __webpack_require__(16),
-          core = __webpack_require__(7),
+      var $export = __webpack_require__(12),
+          core = __webpack_require__(3),
           fails = __webpack_require__(8);
       module.exports = function (KEY, exec) {
         var fn = (core.Object || {})[KEY] || Object[KEY],
@@ -12598,11 +12618,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 64 */
+    /* 66 */
     /***/function (module, exports, __webpack_require__) {
 
       var toInteger = __webpack_require__(23),
-          defined = __webpack_require__(14);
+          defined = __webpack_require__(15);
       // true  -> String#at
       // false -> String#codePointAt
       module.exports = function (TO_STRING) {
@@ -12620,7 +12640,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 65 */
+    /* 67 */
     /***/function (module, exports, __webpack_require__) {
 
       var toInteger = __webpack_require__(23),
@@ -12633,7 +12653,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 66 */
+    /* 68 */
     /***/function (module, exports, __webpack_require__) {
 
       // 7.1.15 ToLength
@@ -12645,14 +12665,14 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 67 */
+    /* 69 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
       'use strict';
 
-      var addToUnscopables = __webpack_require__(48),
-          step = __webpack_require__(56),
+      var addToUnscopables = __webpack_require__(49),
+          step = __webpack_require__(58),
           Iterators = __webpack_require__(17),
           toIObject = __webpack_require__(2);
 
@@ -12687,14 +12707,24 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 68 */
+    /* 70 */
+    /***/function (module, exports, __webpack_require__) {
+
+      // 20.1.2.3 Number.isInteger(number)
+      var $export = __webpack_require__(12);
+
+      $export($export.S, 'Number', { isInteger: __webpack_require__(56) });
+
+      /***/
+    },
+    /* 71 */
     /***/function (module, exports, __webpack_require__) {
 
       // 19.1.2.14 Object.keys(O)
       var toObject = __webpack_require__(37),
-          $keys = __webpack_require__(9);
+          $keys = __webpack_require__(10);
 
-      __webpack_require__(63)('keys', function () {
+      __webpack_require__(65)('keys', function () {
         return function keys(it) {
           return $keys(toObject(it));
         };
@@ -12702,17 +12732,17 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 69 */
+    /* 72 */
     /***/function (module, exports) {
 
       /***/},
-    /* 70 */
+    /* 73 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
       'use strict';
 
-      var $at = __webpack_require__(64)(true);
+      var $at = __webpack_require__(66)(true);
 
       // 21.1.3.27 String.prototype[@@iterator]()
       __webpack_require__(31)(String, 'String', function (iterated) {
@@ -12731,7 +12761,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 71 */
+    /* 74 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
@@ -12740,29 +12770,29 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       var global = __webpack_require__(0),
           has = __webpack_require__(1),
-          DESCRIPTORS = __webpack_require__(3),
-          $export = __webpack_require__(16),
+          DESCRIPTORS = __webpack_require__(4),
+          $export = __webpack_require__(12),
           redefine = __webpack_require__(36),
-          META = __webpack_require__(58).KEY,
+          META = __webpack_require__(60).KEY,
           $fails = __webpack_require__(8),
           shared = __webpack_require__(22),
           setToStringTag = __webpack_require__(20),
-          uid = __webpack_require__(13),
-          wks = __webpack_require__(6),
+          uid = __webpack_require__(14),
+          wks = __webpack_require__(7),
           wksExt = __webpack_require__(26),
           wksDefine = __webpack_require__(25),
-          keyOf = __webpack_require__(57),
-          enumKeys = __webpack_require__(51),
-          isArray = __webpack_require__(54),
-          anObject = __webpack_require__(10),
+          keyOf = __webpack_require__(59),
+          enumKeys = __webpack_require__(52),
+          isArray = __webpack_require__(55),
+          anObject = __webpack_require__(11),
           toIObject = __webpack_require__(2),
           toPrimitive = __webpack_require__(24),
-          createDesc = __webpack_require__(12),
+          createDesc = __webpack_require__(13),
           _create = __webpack_require__(32),
-          gOPNExt = __webpack_require__(61),
-          $GOPD = __webpack_require__(60),
-          $DP = __webpack_require__(5),
-          $keys = __webpack_require__(9),
+          gOPNExt = __webpack_require__(63),
+          $GOPD = __webpack_require__(62),
+          $DP = __webpack_require__(6),
+          $keys = __webpack_require__(10),
           gOPD = $GOPD.f,
           dP = $DP.f,
           gOPN = gOPNExt.f,
@@ -12970,7 +13000,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       });
 
       // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-      $Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(4)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+      $Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(5)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
       // 19.4.3.5 Symbol.prototype[@@toStringTag]
       setToStringTag($Symbol, 'Symbol');
       // 20.2.1.9 Math[@@toStringTag]
@@ -12980,28 +13010,28 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 72 */
+    /* 75 */
     /***/function (module, exports, __webpack_require__) {
 
       __webpack_require__(25)('asyncIterator');
 
       /***/
     },
-    /* 73 */
+    /* 76 */
     /***/function (module, exports, __webpack_require__) {
 
       __webpack_require__(25)('observable');
 
       /***/
     },
-    /* 74 */
+    /* 77 */
     /***/function (module, exports, __webpack_require__) {
 
-      __webpack_require__(67);
+      __webpack_require__(69);
       var global = __webpack_require__(0),
-          hide = __webpack_require__(4),
+          hide = __webpack_require__(5),
           Iterators = __webpack_require__(17),
-          TO_STRING_TAG = __webpack_require__(6)('toStringTag');
+          TO_STRING_TAG = __webpack_require__(7)('toStringTag');
 
       for (var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++) {
         var NAME = collections[i],
@@ -13013,28 +13043,35 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 75 */
+    /* 78 */
     /***/function (module, exports, __webpack_require__) {
 
       module.exports = { "default": __webpack_require__(44), __esModule: true };
 
       /***/
     },
-    /* 76 */
+    /* 79 */
     /***/function (module, exports, __webpack_require__) {
 
       module.exports = { "default": __webpack_require__(45), __esModule: true };
 
       /***/
     },
-    /* 77 */
+    /* 80 */
     /***/function (module, exports, __webpack_require__) {
 
       module.exports = { "default": __webpack_require__(46), __esModule: true };
 
       /***/
     },
-    /* 78 */
+    /* 81 */
+    /***/function (module, exports, __webpack_require__) {
+
+      module.exports = { "default": __webpack_require__(47), __esModule: true };
+
+      /***/
+    },
+    /* 82 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
@@ -13042,11 +13079,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       exports.__esModule = true;
 
-      var _iterator = __webpack_require__(77);
+      var _iterator = __webpack_require__(81);
 
       var _iterator2 = _interopRequireDefault(_iterator);
 
-      var _symbol = __webpack_require__(76);
+      var _symbol = __webpack_require__(80);
 
       var _symbol2 = _interopRequireDefault(_symbol);
 
@@ -13068,7 +13105,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 79 */
+    /* 83 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
@@ -13078,13 +13115,17 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
         value: true
       });
 
-      var _keys = __webpack_require__(75);
+      var _keys = __webpack_require__(79);
 
       var _keys2 = _interopRequireDefault(_keys);
 
-      var _typeof2 = __webpack_require__(78);
+      var _typeof2 = __webpack_require__(82);
 
       var _typeof3 = _interopRequireDefault(_typeof2);
+
+      var _isInteger = __webpack_require__(78);
+
+      var _isInteger2 = _interopRequireDefault(_isInteger);
 
       function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : { default: obj };
@@ -13097,7 +13138,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       //             <!-- 此处mousedown.stop则可以实现toggle,但是可以同时打开多个select了,反之则不可toggle -->
       //             <button v-el:btn type="button" class="btn btn-default multiselect dropdown-toggle btn-multipe"
       //                 @click="toggleDropdown"
-      //                 @blur="show = (search ? show : false)"
+      //                 @blur="show = (searchable ? show : false)"
       //                 :disabled="disabled"
       //                 :title="selectedItems || placeholder"
       //             >
@@ -13105,9 +13146,9 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       //                 <span class="btn-content">{{ selectedItems }}</span>
       //                 <span class="caret"></span>
       //             </button>
-      //             <ul class="dropdown-menu" @mousedown.stop> <!-- make scrollbar drapable -->
+      //             <ul class="dropdown-menu" :style="{ 'max-height': optionalHeight }" @mousedown.stop> <!-- make scrollbar drapable -->
       //                 <template v-if="options.length">
-      //                     <li v-if="search" class="bs-searchbox">
+      //                     <li v-if="searchable" class="bs-searchbox">
       //                         <input type="text" @mousedown.stop placeholder="搜索" v-model="searchText" class="form-control" autocomplete="off" />
       //                         <span class="clear-searchText glyphicon glyphicon-remove-circle" @mousedown.stop="searchText = ''" aria-hidden="true"></span>
       //                     </li>
@@ -13193,7 +13234,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       //     }
       //     .dropdown-menu {
       //         min-width: 100%; // override bootstrap 160px
-      //         max-height: 400px;
+      //         // max-height: 400px;
       //         overflow: auto;
       //         width: auto;
 
@@ -13242,6 +13283,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       // </style>
 
       // <script>
+      // polyfill
+      Number.isInteger = _isInteger2.default || function (value) {
+        return typeof value === "number" && isFinite(value) && Math.floor(value) === value;
+      };
+
       var COMPONENT_NS = 'SELECT';
 
       exports.default = {
@@ -13259,16 +13305,20 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             type: String,
             default: '没有选择'
           },
+          disabled: {
+            type: Boolean,
+            default: false
+          },
           options: {
             type: [Array, Object], // Array是目标类型，Object也支持转换，但是Array中item必须为Object，结构为{value: label}
             coerce: function coerce(val) {
               // 目标结构:
               // [{
               //   label: '北京',
-              //   value: '131'
+              //   value: '111'
               // }, {
               //   label: '上海',
-              //   value: '289'
+              //   value: '222'
               // }]
               // Array: with vilid structure, return it to use
               if (val && val instanceof Array && val.length > 0 && "label" in val[0] && "value" in val[0]) {
@@ -13296,7 +13346,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             type: Boolean,
             default: false
           },
-          search: { // Allow searching (only works when options are provided)
+          searchable: { // Allow searching (only works when options are provided)
             type: Boolean,
             default: false
           },
@@ -13308,9 +13358,9 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             type: Boolean,
             default: false
           },
-          disabled: {
-            type: Boolean,
-            default: false
+          height: {
+            type: [Number, String],
+            default: '400'
           },
           /* 全选 */
           showSelectAllOption: { // 是否显示'全部'选项
@@ -13348,6 +13398,8 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
         },
         created: function created() {},
         ready: function ready() {
+          var _this = this;
+
           // watch immediate已经确保了转换和类型确定
           if (!Array.isArray(this.vm)) {
             console.warn('vm should be Array but now: ' + (0, _typeof3.default)(this.vm));
@@ -13364,8 +13416,8 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
           // 因为mousedown先于click触发，这样就不能同时打开多个下拉菜单了,
           // 而click事件还能响应，来触发toggleDropdown方法，弹出下拉菜单! 反之不可...
           document.addEventListener('mousedown', function () {
-            this.$emit('closeSelectList');
-          }.bind(this), false);
+            _this.$emit('closeSelectList');
+          }, false);
         },
         data: function data() {
           return {
@@ -13378,7 +13430,17 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             showNotify: false
           };
         },
+
         computed: {
+          optionalHeight: function optionalHeight() {
+            if (this.height == null || this.height === '') {
+              return null;
+            }
+            if ((0, _isInteger2.default)(+this.height)) {
+              return this.height + 'px';
+            }
+            return this.height;
+          },
           optionsAllArr: function optionsAllArr() {
             var arr = [];
             for (var i = 0; i < this.optionsLength; i++) {
@@ -13393,6 +13455,8 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             return (0, _keys2.default)(this.options).length > this.showPanelCount;
           },
           selectedItems: function selectedItems() {
+            var _this2 = this;
+
             // 关键点! 每次选择vm都可能被改写为字符串,所以每次都需要检查类型，保证是数组
             if (!Array.isArray(this.vm)) {
               this.vm = [this.vm];
@@ -13419,10 +13483,10 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
               var foundItems = [];
               for (var i = 0; i < this.optionsLength; i++) {
                 this.vm.forEach(function (item, index) {
-                  if (item == this.options[i].value) {
-                    foundItems.push(this.options[i].label);
+                  if (item == _this2.options[i].value) {
+                    foundItems.push(_this2.options[i].label);
                   }
-                }.bind(this));
+                });
               }
               // 最终结果的显示
               if (foundItems.length < 4) {
@@ -13437,10 +13501,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
           }
         },
         watch: {
-          'value': {
+          value: {
             immediate: true,
             deep: true,
             handler: function handler(value) {
+              var _this3 = this;
 
               // 0720: fix noData init crash...
               if (value == null) {
@@ -13472,8 +13537,8 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
                 this.select(value);
                 this.$watch('options', function (val) {
-                  this.select(value);
-                }.bind(this));
+                  _this3.select(value);
+                });
               }
 
               if (Array.isArray(this.vm) && this.vm.length > 1 && !this.multiple) {
@@ -13484,18 +13549,20 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
           'vm': {
             deep: true,
             handler: function handler(vm) {
+              var _this4 = this;
+
               if (vm.length > this.limit) {
                 this.showNotify = true;
                 this.vm.pop();
                 setTimeout(function () {
-                  this.showNotify = false;
-                }.bind(this), 1000);
+                  _this4.showNotify = false;
+                }, 1000);
               }
               this.selectedOptions = this.options.filter(function (item, index) {
-                return this.vm.some(function (option) {
-                  return option === item.value;
+                return _this4.vm.some(function (option) {
+                  option === item.value;
                 });
-              }.bind(this));
+              });
             }
           },
           'show': function show(val) {
@@ -13533,6 +13600,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
               }
             }
           },
+
           // 最后调用reWriteValue方法将vm同步至value
           select: function select(v) {
             this.currentItem = v;
@@ -13600,7 +13668,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
           }
         },
         events: {
-          'closeSelectList': function closeSelectList() {
+          closeSelectList: function closeSelectList() {
             this.show = false;
           }
         }
@@ -13609,7 +13677,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
       /***/
     },
-    /* 80 */
+    /* 84 */
     /***/function (module, exports, __webpack_require__) {
 
       "use strict";
@@ -14495,6 +14563,7 @@ new _vue2.default({
                 'false': false
             },
             name: 'name',
+            height: '400',
             label: 'label',
             placeholder: 'placeholder',
             options: {
@@ -14517,15 +14586,43 @@ new _vue2.default({
             },
             value: '0',
             multiple: true,
-            search: true,
+            searchable: true,
             cos: true,
-            showAll: true,
-            svalue: '__all__',
-            slabel: '全部',
-            behavior: 'allChecked'
+            showSelectAllOption: true,
+            selectAllOptionValue: '__all__',
+            selectAllOptionLabel: '全部',
+            selectAllBehavior: 'allChecked'
         };
     },
 
+    methods: {
+        selectAllToggle: function selectAllToggle() {
+            this.showSelectAllOption = true;
+            this.selectAllBehavior = 'allChecked';
+            this.showSelectAllOption = true;
+            this.searchable = true;
+            this.multiple = true;
+            this.value = this.value === '' ? this.selectAllOptionValue : '';
+        },
+        selectAllSemantic: function selectAllSemantic() {
+            this.showSelectAllOption = true;
+            this.selectAllBehavior = 'semantic';
+            this.searchable = true;
+            this.multiple = true;
+            this.value = this.selectAllOptionValue;
+        },
+        selectNone: function selectNone() {
+            this.showSelectAllOption = true;
+            this.selectAllBehavior = 'allChecked';
+            this.value = '';
+        },
+        simple: function simple() {
+            this.value = '';
+            this.showSelectAllOption = false;
+            this.multiple = false;
+            this.searchable = false;
+        }
+    },
     components: {
         vcSelect: _build2.default
     }

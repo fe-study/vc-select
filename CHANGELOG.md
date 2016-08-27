@@ -1,5 +1,12 @@
 <h1 align="center">vc-select - @changelog</h1>
 
+## 0.9.0
+
+`2016-08-27`
+
+- break change! rename `search` to `searchable`
+- 新增 `height` 属性，控制下拉菜单长度，默认 `400px`
+
 ## 0.8.1
 
 `2016-08-16`

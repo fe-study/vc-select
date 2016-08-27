@@ -5,7 +5,7 @@
             <!-- 此处mousedown.stop则可以实现toggle,但是可以同时打开多个select了,反之则不可toggle -->
             <button v-el:btn type="button" class="btn btn-default multiselect dropdown-toggle btn-multipe"
                 @click="toggleDropdown"
-                @blur="show = (search ? show : false)"
+                @blur="show = (searchable ? show : false)"
                 :disabled="disabled"
                 :title="selectedItems || placeholder"
             >
@@ -13,9 +13,9 @@
                 <span class="btn-content">{{ selectedItems }}</span>
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" @mousedown.stop> <!-- make scrollbar drapable -->
+            <ul class="dropdown-menu" :style="{ 'max-height': optionalHeight }" @mousedown.stop> <!-- make scrollbar drapable -->
                 <template v-if="options.length">
-                    <li v-if="search" class="bs-searchbox">
+                    <li v-if="searchable" class="bs-searchbox">
                         <input type="text" @mousedown.stop placeholder="搜索" v-model="searchText" class="form-control" autocomplete="off" />
                         <span class="clear-searchText glyphicon glyphicon-remove-circle" @mousedown.stop="searchText = ''" aria-hidden="true"></span>
                     </li>
@@ -101,7 +101,7 @@
     }
     .dropdown-menu {
         min-width: 100%; // override bootstrap 160px
-        max-height: 400px;
+        // max-height: 400px;
         overflow: auto;
         width: auto;
 
@@ -150,6 +150,13 @@
 </style>
 
 <script>
+// polyfill
+Number.isInteger = Number.isInteger || function(value) {
+  return typeof value === "number" && 
+    isFinite(value) && 
+    Math.floor(value) === value
+}
+
 const COMPONENT_NS = 'SELECT'
 
 export default {
@@ -167,16 +174,20 @@ export default {
             type: String,
             default: '没有选择'
         },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
         options: {
             type: [Array, Object], // Array是目标类型，Object也支持转换，但是Array中item必须为Object，结构为{value: label}
-            coerce: function (val) {
+            coerce (val) {
                 // 目标结构:
                 // [{
                 //   label: '北京',
-                //   value: '131'
+                //   value: '111'
                 // }, {
                 //   label: '上海',
-                //   value: '289'
+                //   value: '222'
                 // }]
                 // Array: with vilid structure, return it to use
                 if (val && val instanceof Array && val.length > 0 && "label" in val[0] && "value" in val[0]) {
@@ -204,7 +215,7 @@ export default {
             type: Boolean,
             default: false
         },
-        search: { // Allow searching (only works when options are provided)
+        searchable: { // Allow searching (only works when options are provided)
             type: Boolean,
             default: false
         },
@@ -216,9 +227,9 @@ export default {
             type: Boolean,
             default: false
         },
-        disabled: {
-            type: Boolean,
-            default: false
+        height: {
+            type: [Number, String],
+            default: '400'
         },
         /* 全选 */
         showSelectAllOption: { // 是否显示'全部'选项
@@ -254,9 +265,9 @@ export default {
             default: 7
         }
     },
-    created: function () {
+    created () {
     },
-    ready: function () {
+    ready () {
         // watch immediate已经确保了转换和类型确定
         if (!Array.isArray(this.vm)) {
             console.warn('vm should be Array but now: ' + typeof this.vm)
@@ -272,11 +283,11 @@ export default {
         // 绑定点击空白处下拉选择框消失事件, 20160508改为监听mousedown(同时修改了模板), 让mousedown传递出去，
         // 因为mousedown先于click触发，这样就不能同时打开多个下拉菜单了,
         // 而click事件还能响应，来触发toggleDropdown方法，弹出下拉菜单! 反之不可...
-        document.addEventListener('mousedown', function () {
+        document.addEventListener('mousedown', () => {
             this.$emit('closeSelectList')
-        }.bind(this), false)
+        }, false)
     },
-    data: function () {
+    data () {
         return {
             show: false, // 是否显示下拉
             type: '__NOTINIT__', // value的初始化时候的类型
@@ -288,20 +299,29 @@ export default {
         }
     },
     computed: {
-        optionsAllArr: function () {
+        optionalHeight: function () {
+            if (this.height == null || this.height === '') {
+                return null
+            }
+            if (Number.isInteger(+this.height)) {
+                return this.height + 'px'
+            }
+            return this.height
+        },
+        optionsAllArr () {
             var arr = []
             for (var i = 0; i < this.optionsLength; i++) {
                 arr.push(this.options[i]['value'])
             }
             return arr
         },
-        optionsLength: function () {
+        optionsLength () {
             return Object.keys(this.options).length
         },
-        showSelectedPanel: function () {
+        showSelectedPanel () {
             return Object.keys(this.options).length > this.showPanelCount
         },
-        selectedItems: function () {
+        selectedItems () {
             // 关键点! 每次选择vm都可能被改写为字符串,所以每次都需要检查类型，保证是数组
             if (!Array.isArray(this.vm)) {
                 this.vm = [this.vm]
@@ -328,11 +348,11 @@ export default {
             if (this.vm.length < 4) {
                 var foundItems = []
                 for (var i = 0; i < this.optionsLength; i++) {
-                    this.vm.forEach(function (item, index) {
+                    this.vm.forEach((item, index) => {
                         if (item == this.options[i].value) {
                             foundItems.push(this.options[i].label)
                         }
-                    }.bind(this))
+                    })
                 }
                 // 最终结果的显示
                 if (foundItems.length < 4) {
@@ -343,15 +363,15 @@ export default {
             }
 
         },
-        showPlaceholder: function () {
+        showPlaceholder () {
           return Array.isArray(this.vm) && (this.vm.length === 0)
         }
     },
     watch: {
-        'value': {
+        value: {
             immediate: true,
             deep: true,
-            handler: function (value) {
+            handler (value) {
 
                 // 0720: fix noData init crash...
                 if (value == null) {
@@ -382,9 +402,9 @@ export default {
                     this.currentItem = this.selectAllOptionValue
 
                     this.select(value)
-                    this.$watch('options', function(val) {
+                    this.$watch('options', (val) => {
                         this.select(value)
-                    }.bind(this))
+                    })
                 }
 
                 if (Array.isArray(this.vm) && this.vm.length > 1 && !this.multiple) {
@@ -394,20 +414,20 @@ export default {
         },
         'vm': {
             deep: true,
-            handler: function (vm) {
+            handler (vm) {
                 if (vm.length > this.limit) {
                     this.showNotify = true
                     this.vm.pop()
-                    setTimeout(function () {
+                    setTimeout(() => {
                         this.showNotify = false
-                    }.bind(this), 1000)
+                    }, 1000)
                 }
-                this.selectedOptions = this.options.filter(function (item, index) {
-                    return this.vm.some(function (option) { return option === item.value })
-                }.bind(this))
+                this.selectedOptions = this.options.filter((item, index) => {
+                    return this.vm.some((option) => { option === item.value })
+                })
             }
         },
-        'show': function (val) {
+        'show' (val) {
             this.searchText = ''
             var msg = {
                 action: val ? 'show' : 'hide',
@@ -421,14 +441,14 @@ export default {
         }
     },
     methods: {
-        includes: function (val) {
+        includes (val) {
             if (Array.isArray(this.vm)) {
-                return this.vm.some(function (item, index) {
+                return this.vm.some((item, index) => {
                     return item == val // 非严格类型匹配
                 })
             }
         },
-        reWriteValue: function () {
+        reWriteValue () {
             if (this.type === 'Array') {
                 this.value = this.vm
             } else {
@@ -443,7 +463,7 @@ export default {
             }
         },
         // 最后调用reWriteValue方法将vm同步至value
-        select: function (v) {
+        select (v) {
             this.currentItem = v
             var vv = Array.isArray(v) ? v[0] : v
             // patch for selectAll 2, 正好选了'全部'这一项
@@ -502,12 +522,12 @@ export default {
             // core: 回写value
             this.reWriteValue()
         },
-        toggleDropdown: function () {
+        toggleDropdown () {
             this.show = !this.show
         }
     },
     events: {
-        'closeSelectList': function () {
+        closeSelectList () {
             this.show = false
         }
     }

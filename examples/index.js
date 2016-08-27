@@ -10,6 +10,7 @@ new Vue({
                 'false': false
             },
             name: 'name',
+            height: '400',
             label: 'label',
             placeholder: 'placeholder',
             options: {
@@ -32,14 +33,42 @@ new Vue({
             },
             value: '0',
             multiple: true,
-            search: true,
+            searchable: true,
             cos: true,
-            showAll: true,
-            svalue: '__all__',
-            slabel: '全部',
-            behavior: 'allChecked'
+            showSelectAllOption: true,
+            selectAllOptionValue: '__all__',
+            selectAllOptionLabel: '全部',
+            selectAllBehavior: 'allChecked'
 		}
 	},
+    methods: {
+        selectAllToggle () {
+            this.showSelectAllOption = true
+            this.selectAllBehavior = 'allChecked'
+            this.showSelectAllOption = true
+            this.searchable = true
+            this.multiple = true
+            this.value = this.value === '' ? this.selectAllOptionValue : ''
+        },
+        selectAllSemantic () {
+            this.showSelectAllOption = true
+            this.selectAllBehavior = 'semantic'
+            this.searchable = true
+            this.multiple = true
+            this.value = this.selectAllOptionValue
+        },
+        selectNone () {
+            this.showSelectAllOption = true
+            this.selectAllBehavior = 'allChecked'
+            this.value = ''
+        },
+        simple () {
+            this.value = ''
+            this.showSelectAllOption = false
+            this.multiple = false
+            this.searchable = false
+        }
+    },
 	components: {
         vcSelect
 	}

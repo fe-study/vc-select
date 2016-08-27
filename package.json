@@ -1,7 +1,7 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-select",
-  "version": "0.8.3",
+  "version": "0.9.0",
   "description": "a select component based on vue.js & bootstrap",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
@@ -44,6 +44,7 @@
     "webpack-dev-server": "^1.12.0"
   },
   "files": [
+      "src/components/Select.vue",
       "dist/build.js",
       "dist/build.js.map",
       "dist/build.min.js"

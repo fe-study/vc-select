@@ -15,7 +15,11 @@
             background: rgba(119, 129, 149, 0.8);
         }
         .container {
-            width: 300px;
+            width: 325px;
+        }
+        .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
         .form-group label {
             font-weight: normal;
@@ -25,7 +29,6 @@
             font-weight: normal;
             display: inline-block;
         }
-
         .vc-select .btn-group {
             width: 200px;
         }
@@ -33,26 +36,39 @@
 </head>
 <body>
     <h1 align="center">@Vue-component - vc-select</h1>
+    <div class="text-center">多功能下拉选择组件，支持多选，全选，反选，搜索，多种配置与事件接口</div>
     <hr>
 
     <div id="app" class="container">
 
+        <button class="btn btn-sm btn-warning" @click="selectAllToggle">全选toggle</button>
+        <button class="btn btn-sm btn-danger" @click="selectNone">清空</button>
+        <button class="btn btn-sm btn-info" @click="simple">简版</button>
+        <button class="btn btn-sm btn-default" @click="selectAllSemantic">语义全选</button>
+
+
         <vc-select
             class="vc-select"
+            :height="height"
             :name="name"
             :label="label"
             :placeholder="placeholder"
             :options="options"
             :value.sync="value"
             :multiple="multiple"
-            :search="search"
+            :searchable="searchable"
             :close-on-select="cos"
-            :show-select-all-option="showAll"
-            :select-all-option-value="svalue"
-            :select-all-option-label="slabel"
-            :select-all-behavior="behavior"
+            :show-select-all-option="showSelectAllOption"
+            :select-all-option-value="selectAllOptionValue"
+            :select-all-option-label="selectAllOptionLabel"
+            :select-all-behavior="selectAllBehavior"
         >
         </vc-select>
+
+        <div class="form-group">
+            <label>配置组件的height - default: '400px'</label>
+            <input type="text" class="form-control" height="height" v-model="height" />
+        </div>
 
         <div class="form-group">
             <label for="" class="">配置组件渲染时的dom name属性</label>
@@ -82,8 +98,8 @@
 
         <div class="form-group">
             <label>是否显示搜索组件(默认true)</label>
-            <input type="radio" :value="bools.true" name="search" v-model="search"> 显示搜索框
-            <input type="radio" :value="bools.false" name="search" v-model="search"> 不显示
+            <input type="radio" :value="bools.true" name="searchable" v-model="searchable"> 显示搜索框
+            <input type="radio" :value="bools.false" name="searchable" v-model="searchable"> 不显示
         </div>
 
         <div class="form-group">
@@ -95,25 +111,25 @@
         <div class="form-group">
             <label>是否显示全选(默认false)</label>
         <label>
-            <input type="radio" :value="bools.true" name="showAll" v-model="showAll"> 显示全选
-            <input type="radio" :value="bools.false" name="showAll" v-model="showAll"> 不显示全选
+            <input type="radio" :value="bools.true" name="showSelectAllOption" v-model="showSelectAllOption"> 显示全选
+            <input type="radio" :value="bools.false" name="showSelectAllOption" v-model="showSelectAllOption"> 不显示全选
         </label>
         </div>
 
         <div class="form-group">
             <label>配置全选的value(默认: '__all__')</label>
-            <input type="text" class="form-control" placeholder="svalue" v-model="svalue" />
+            <input type="text" class="form-control" placeholder="selectAllOptionValue" v-model="selectAllOptionValue" />
         </div>
 
         <div class="form-group">
             <label>配置全选的label</label>
-            <input type="text" class="form-control" placeholder="slabel" v-model="slabel" />
+            <input type="text" class="form-control" placeholder="selectAllOptionLabel" v-model="selectAllOptionLabel" />
         </div>
 
         <div class="form-group">
             <label>配置全选语义(默认: allChecked 全部选择)</label>
-            <input type="radio" value="allChecked" name="selectAllBehavior" v-model="behavior"> allChecked
-            <input type="radio" value="semantic" name="selectAllBehavior" v-model="behavior"> semantic
+            <input type="radio" value="allChecked" name="selectAllBehavior" v-model="selectAllBehavior"> allChecked
+            <input type="radio" value="semantic" name="selectAllBehavior" v-model="selectAllBehavior"> semantic
         </div>
 
     </div>
