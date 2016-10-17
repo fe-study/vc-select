@@ -3,7 +3,7 @@ var path = require('path')
 var name = require('./package.json').name.replace(/-(\w)/g, function (match) { return match.slice(1).toUpperCase() } )
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/main.js',
   output: {
     path: './dist',
     publicPath: '/',
@@ -29,14 +29,10 @@ module.exports = {
         exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
         loader: 'babel'
       },
-      { test: /\.css$/, loader: "style-loader!css-loader?root=./docs/" },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.scss$/, loader: "style!css!sass" },
       { test: /\.less$/, loader: "style-loader!css-loader!less-loader" },
     ]
-  },
-  babel: {
-    presets: ['es2015'],
-    plugins: ['transform-runtime']
   },
   devtool: 'source-map'
 }

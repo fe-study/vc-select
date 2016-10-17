@@ -13,6 +13,9 @@
 
 `npm install vc-select --save`
 
+if you are using single file `*.vue` in project, please import the component by:  
+`import vcSelect from 'vc-select/src'`
+
 ## Demo
 
 [online demo](https://iwaimai-bi-fe.github.io/vc-select/examples/)
@@ -39,24 +42,30 @@ npm run build:dev
 npm run build:prod
 
 ```
-
-* dev 
-
-```node
-npm run dev 
-
-```
-
 * build example
 
 ```node
-npm run example
+npm run build:example
 ```
 
 * run server
 
 ```node
 npm run start
+```
+
+* dev component
+
+```node
+npm run dev 
+
+```
+
+* dev example
+
+```node
+npm run example
+
 ```
 
 * publish 

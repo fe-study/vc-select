@@ -1,8 +1,8 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-select",
-  "version": "0.9.0",
-  "description": "a select component based on vue.js & bootstrap",
+  "version": "0.11.0",
+  "description": "select component based on vue.js & bootstrap",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
     "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
@@ -11,7 +11,7 @@
     "build": "npm run build:dev && npm run build:prod && npm run build:example",
     "dev": " webpack -w --progress --hide-modules --config webpack.config.js",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
-    "publish": "npm build && npm publish"
+    "release": "npm run build && npm publish"
   },
   "main": "dist/build.js",
   "repository": {
@@ -22,10 +22,11 @@
   "bugs": {
       "url": "https://github.com/iwaimai-bi-fe/vc-select/issues"
   },
+  "keywords": ["select", "dropdown", "component", "vue", "bootstrap"],
   "dependencies": {
+    "bootstrap": "^3.3.5",
     "vue": "^1.0.24"
   },
-  "keywords": ["input", "select", "component", "vue", "bootstrap"],
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
@@ -44,10 +45,10 @@
     "webpack-dev-server": "^1.12.0"
   },
   "files": [
-      "src/components/Select.vue",
-      "dist/build.js",
-      "dist/build.js.map",
-      "dist/build.min.js"
+    "src",
+    "dist/build.js",
+    "dist/build.js.map",
+    "dist/build.min.js"
   ],
   "license": "MIT"
 }

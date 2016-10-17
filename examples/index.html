@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
-    <title>example</title>
-    <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
-            border-radius: 4px;
-            background: rgba(119, 129, 149, 0.8);
-        }
-        .container {
-            width: 325px;
-        }
-        .btn {
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-        .form-group label {
-            font-weight: normal;
-            display: block;
-        }
-        .form-group:first-of-type label { /* 重置组件 */
-            font-weight: normal;
-            display: inline-block;
-        }
-        .vc-select .btn-group {
-            width: 200px;
-        }
-    </style>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+<title>example</title>
+<style>
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        background: rgba(119, 129, 149, 0.8);
+    }
+    .container {
+        width: 600px;
+        text-align: center;
+    }
+    :not(.btn-group) > .btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    .form-group label {
+        font-weight: normal;
+        display: block;
+    }
+    .form-group:first-of-type label { /* 重置组件 */
+        font-weight: normal;
+        display: inline-block;
+    }
+    .vc-select .btn-group {
+        width: 200px;
+    }
+    pre {
+        text-align: left;
+        min-height: 327px;
+    }
+</style>
 </head>
 <body>
     <h1 align="center">@Vue-component - vc-select</h1>
-    <div class="text-center">多功能下拉选择组件，支持多选，全选，反选，搜索，多种配置与事件接口</div>
+    <div class="text-center">多功能下拉选择组件，支持单选、多选，全选（toggle），搜索，tags显示所选项目，支持禁用，option子组件等多种配置与事件接口</div>
     <hr>
 
     <div id="app" class="container">
@@ -44,11 +49,25 @@
         <button class="btn btn-sm btn-warning" @click="selectAllToggle">全选toggle</button>
         <button class="btn btn-sm btn-danger" @click="selectNone">清空</button>
         <button class="btn btn-sm btn-info" @click="simple">简版</button>
-        <button class="btn btn-sm btn-default" @click="selectAllSemantic">语义全选</button>
+        <button class="btn btn-sm btn-default" @click="addLongItem">添加长选项</button>
+        <button class="btn btn-sm btn-default" @click="removeLongItem">去掉长选项</button>
+        <button class="btn btn-sm btn-default" @click="addDisabledItem">增加带disabled的选项</button>
+        <button class="btn btn-sm btn-default" @click="toggleTags">toggle已选值展示形式</button>
+        <br>
 
+        值同步模式:
+        <button :class="{ 'btn-primary': lazy === false }" class="btn btn-sm btn-default" @click="lazyFalseFn">立即同步值</button>
+        <button :class="{ 'btn-primary': lazy === true }" class="btn btn-sm btn-default" @click="lazyTrueFn">下拉关闭再同步</button>
+
+    <pre>value: {{ value | json 4 }}</pre>
+
+        <hr>
 
         <vc-select
+            :tags="tags"
             class="vc-select"
+            :lazy="lazy"
+            :width="width"
             :height="height"
             :name="name"
             :label="label"
@@ -62,8 +81,66 @@
             :select-all-option-value="selectAllOptionValue"
             :select-all-option-label="selectAllOptionLabel"
             :select-all-behavior="selectAllBehavior"
+            :on-show="onShow"
+            :on-hide="onHide"
+            :on-select="onSelect"
         >
         </vc-select>
+
+        <hr>
+
+        <vc-select value="one" label="simple slot disabled"
+            :on-show="onShow"
+            :on-hide="onHide"
+            :on-select="onSelect"
+            >
+            <vc-option value="one" label="one">one</vc-option>
+            <vc-option value="two" label="two" disabled>two</vc-option>
+            <vc-option value="three">three</vc-option>
+        </vc-select>
+
+        <vc-select
+            value="five"
+            label="slot multiple"
+            :multiple="true"
+            :searchable="true"
+            :show-select-all-option="showSelectAllOption"
+            :select-all-option-value="selectAllOptionValue"
+            :select-all-option-label="selectAllOptionLabel"
+            :select-all-behavior="selectAllBehavior"
+            :on-show="onShow"
+            :on-hide="onHide"
+            :on-select="onSelect"
+        >
+            <vc-option value="four" label="four">four</vc-option>
+            <vc-option value="five" label="five">five</vc-option>
+            <vc-option value="six">six</vc-option>
+        </vc-select>
+
+        <vc-select
+            value="ddd"
+            label="slot multiple disabled"
+            :multiple="true"
+            :searchable="true"
+            :show-select-all-option="showSelectAllOption"
+            :select-all-option-value="selectAllOptionValue"
+            :select-all-option-label="selectAllOptionLabel"
+            :select-all-behavior="selectAllBehavior"
+            :on-show="onShow"
+            :on-hide="onHide"
+            :on-select="onSelect"
+        >
+            <vc-option value="aaa">aaa</vc-option>
+            <vc-option value="bbb" label="bbb">bbb</vc-option>
+            <vc-option value="ccc" :disabled="true">ccc</vc-option>
+            <vc-option value="ddd" :disabled="false">ddd</vc-option>
+            <vc-option value="eee" disabled>eee</vc-option>
+        </vc-select>
+
+        <div class="form-group">
+            <label>配置组件的width - default: '200px'</label>
+            <input type="text" class="form-control" width="width" v-model="width" />
+        </div>
 
         <div class="form-group">
             <label>配置组件的height - default: '400px'</label>
@@ -92,6 +169,12 @@
 
         <div class="form-group">
             <label>是否多选(默认false)</label>
+            <input type="radio" :value="bools.true" name="lazy" v-model="lazy"> 下拉关闭再同步 
+            <input type="radio" :value="bools.false" name="lazy" v-model="lazy"> 立即同步所选值
+        </div>
+
+        <div class="form-group">
+            <label>是否多选(默认false)</label>
             <input type="radio" :value="bools.true" name="multiple" v-model="multiple"> 多选模式
             <input type="radio" :value="bools.false" name="multiple" v-model="multiple"> 单选模式
         </div>
@@ -110,10 +193,10 @@
 
         <div class="form-group">
             <label>是否显示全选(默认false)</label>
-        <label>
-            <input type="radio" :value="bools.true" name="showSelectAllOption" v-model="showSelectAllOption"> 显示全选
-            <input type="radio" :value="bools.false" name="showSelectAllOption" v-model="showSelectAllOption"> 不显示全选
-        </label>
+            <label>
+                <input type="radio" :value="bools.true" name="showSelectAllOption" v-model="showSelectAllOption"> 显示全选
+                <input type="radio" :value="bools.false" name="showSelectAllOption" v-model="showSelectAllOption"> 不显示全选
+            </label>
         </div>
 
         <div class="form-group">

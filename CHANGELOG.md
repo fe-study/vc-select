@@ -1,5 +1,49 @@
 <h1 align="center">vc-select - @changelog</h1>
 
+## 0.11.0
+
+`2016-10-14`
+
+- `vc-option` privite to `vc-select` 
+
+## 0.10.0 `prerelease`
+
+`2016-09-06` - `2016-09-09`
+
+- 代码格式优化，注释优化，细节优化
+
+- 不明原因bug，导致初始化全选功能组件值不同步到父组件(首次.sync失效)
+  - 通过直接改写父组件值解决...
+
+- 新增 `vc-option` 配合型子组件，更多使用方式拓展，依旧支持父组件value为数组或非数组(逗号分割字符串)
+
+- 新增 `disabled` 属性
+  - 可在 `vc-option` 中使用
+  - 也可以提供 `options` 属性，结构为 `Array<Object{value, label, + disabled: true}>`
+
+- 去除Vue2.0不推荐的 `coerce`, `filter in v-for` 等用法，大量使用计算属性
+
+- bug fix 
+  - 去除错误的 `showSelectAllOption` 判断，解决不显示 `全部` 则选项无法自动全选的bug
+
+- 新增 `width` 属性，默认 `200px` (宽度不包含label) 
+- 新增 `tags` 属性，标签式展示选中项，可点击删除
+- 新增 `vm.$root['vc-select-pool']` 挂载，用于解决全局只能有一个下拉菜单处于打开状态
+- 新增 `onSelect`, `onShow`, `onHide` 事件接口
+
+- 样式优化
+
+- 新增 `lazy` 属性
+  - 用于决定下拉选择所选值是立即同步到value还是下拉关闭后同步
+  - 为一些联动渲染场景优化提供可能和选择
+
+- bug fix 
+  - 解决 `value` 初始化watch时使内部 `vm` 和 `value` 引用相同的问题
+  - 使得 `reWriteValue` 真正可用，并是数据同步的唯一方法
+  - 使得 `lazy` 属性真正可实现
+
+- 项目结构调整，注释优化
+
 ## 0.9.0
 
 `2016-08-27`

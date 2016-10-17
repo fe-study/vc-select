@@ -1,3 +1,4 @@
-import vcSelect from './components/Select'
+import vcSelect from './Select'
 
-module.exports = vcSelect
+export default vcSelect
+export { vcSelect }
