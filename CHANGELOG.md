@@ -1,5 +1,15 @@
 <h1 align="center">vc-select - @changelog</h1>
 
+## 0.11.1
+
+`2016-12-15`
+
+- fix `methods#select` 中lazy模式判断的疏漏,不应该包裹在else里
+- fix `tags` 模式下输入框中删除选中项不同步vm的bug(增加show = false时候的同步)
+- fix `tags` 模式下删除到最后一个时，`watch#vm` 中对selectedOptions的置空更新(原来直接return了)
+- 增加了一些 `[vc-select warn]`, 便于debug
+- 去掉了 `暂无xxx选项` 中选项字样，因为为了 `label` 的灵活性，有时候会带有":", 拼接起来很难看
+
 ## 0.11.0
 
 `2016-10-14`

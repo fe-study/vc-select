@@ -18,6 +18,7 @@
                 <span class="caret" v-show="showPlaceholder"></span>
                 <span class="btn-content" v-show="!tags">{{ selectedItems }}</span>
             </button>
+            <div class="notify" v-show="showNotify" transition="fadein">最多选取{{ limit }}项!</div>
             <ul class="dropdown-menu" :style="{ 'max-height': optionalHeight }" @mousedown.stop> <!-- make scrollbar draggable -->
                 <li v-if="optionsLen && searchable" class="bs-searchbox">
                     <input type="text" @mousedown.stop v-model="searchText" placeholder="搜索" class="form-control" autocomplete="off" />
@@ -40,14 +41,14 @@
                 </li>
                 </template>
                 </slot>
-                <slot v-if="!optionsLen" name="noContent"><div class="no-content-tips">暂无{{ label }}选项</div></slot>
-                <div class="notify" v-show="showNotify" transition="fadein">(最多选取{{ limit }}个)</div>
+                <slot v-if="!optionsLen" name="noContent"><div class="no-content-tips">暂无{{ label }}</div></slot>
             </ul>
         </div>
     </div>
 </template>
 
 <style lang="less">
+@height: 34px;
 .vc-select-component {
 
     label.label-item {
@@ -62,7 +63,7 @@
 
         // 保证清除按钮的居中
         input {
-            height: 34px;
+            height: @height;
             width: 100%; // 撑开宽度
         }
 
@@ -82,9 +83,24 @@
     }
 
     .btn-group {
+        .notify {
+            z-index: 9999;
+            position: absolute;
+            top: 42px;
+            width: 99%;
+            margin: 0 auto;
+            min-height: 26px;
+            padding: 3px 5px;
+            background: #f5f5f5;
+            border: 1px solid #e3e3e3;
+            border-radius: 3px 3px 0 0;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+            pointer-events: none;
+            opacity: .9;
+        }
         button.multiselect { /* override multiselect button height */
             padding: 2px 6px;
-            min-height: 34px;
+            min-height: @height;
             width: 100%;
             overflow: hidden;
             margin: 0;
@@ -142,6 +158,9 @@
                     }
                 }
             }
+            .btn-content {
+                white-space: nowrap;
+            }
         }
         .dropdown-menu {
             min-width: 100%; // override bootstrap 160px
@@ -168,21 +187,7 @@
                 text-align: center;
                 padding: 10px;
             }
-
-            .notify {
-                position: absolute;
-                bottom: 5px;
-                width: 96%;
-                margin: 0 2%;
-                min-height: 26px;
-                padding: 3px 5px;
-                background: #f5f5f5;
-                border: 1px solid #e3e3e3;
-                box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-                pointer-events: none;
-                opacity: .9;
-            }
-        }
+        } // .dropdown-menu
     } // .btn-group
 } // component
 </style>
@@ -215,6 +220,7 @@ const Select = {
             twoWay: true,
             type: [Array, String, Number] // 内部会记录下初始化类型快照，用于反同步，只区分Array, 非Array
         },
+        // 是否是标签式列出所选项
         tags: {
             type: Boolean,
             default: false
@@ -234,11 +240,11 @@ const Select = {
             type: Boolean,
             default: false
         },
-        // 选项: Array是目标类型，Object也支持转换，但是Array必须为Array<Object{ value: label }>
+        // 选项: Array是目标类型，Object也支持转换，但是Array必须为Array<Object{ value, label, disabled }>
         options: {
             type: [Array, Object]
         },
-        // 用于区分下拉选择的值的同步模式(时机)
+        // 用于区分下拉选择的值的同步模式(是点选就同步还是下拉关闭才同步)
         lazy: {
             type: Boolean,
             default: false
@@ -248,7 +254,7 @@ const Select = {
             type: Boolean,
             default: false
         },
-        // 是否可搜索，只有在 `options` 提供才可以
+        // 是否可搜索
         searchable: { 
             type: Boolean,
             default: false
@@ -258,7 +264,7 @@ const Select = {
             type: Number,
             default: 1024
         },
-        // 选择后自动关闭下拉,仅作用在单选
+        // 选择后自动关闭下拉，仅作用在单选
         closeOnSelect: {
             type: Boolean,
             default: false
@@ -266,7 +272,7 @@ const Select = {
         // 选择按钮宽度，不包括label部分 
         width: {
             type: [Number, String],
-            default: '200'
+            default: '150'
         },
         // 下拉列表高度
         height: {
@@ -278,17 +284,18 @@ const Select = {
             type: Boolean,
             default: false 
         },
-        // 全选的文案
+        // 全部选项的文案
         selectAllOptionLabel: {
             type: String,
             default: '全部'
         },
-        // 重要! 传给后端的key值，有默认值，初始化传入自动全选，可配置来避免冲突
+        // ‘全部'选项的值
+        // 重要! 传给后端的key值，有默认值，可配置来避免冲突，初始化传入会自动全选
         selectAllOptionValue: {
             type: String,
             default: '__all__'
         },
-        // 是全部选项被选中还是语义上选中前后端约定的key，默认是全部选中
+        // 是真正全部选项被选中还是语义上选中前后端约定的key，默认是全部选中
         selectAllBehavior: {
             type: String,
             default: 'allChecked' // ['allChecked', 'semantic'] 全选行为上可以是真正全部选项选中或语义上的选中'全部'这一项
@@ -317,7 +324,7 @@ const Select = {
     ready () {
         // watch immediate已经确保了转换和类型确定
         if (!Array.isArray(this.vm)) {
-            console.warn(`[vcSelect warn]: vm should be Array but now: ${typeof this.vm}`)
+            console.warn(`[vc-select warn]: vm should be Array but now: ${typeof this.vm}`)
             return
         }
         // 再做一些转换，防止意外
@@ -326,6 +333,7 @@ const Select = {
         } else if (this.multiple && this.vm.length > this.limit) {
             this.vm = this.vm.slice(0, this.limit)
         }
+        this.reWriteValue()
 
         // 绑定点击空白处下拉选择框消失事件, 20160508改为监听mousedown(同时修改了模板), 让mousedown传递出去，
         // 因为mousedown先于click触发，这样就不能同时打开多个下拉菜单了,
@@ -379,7 +387,7 @@ const Select = {
                 }
 
             // Other: return it for debug
-            console.warn('[vcSelect warn]: maybe invalid options! => ', val)
+            console.warn('[vc-select warn]: maybe invalid options! => ', val)
             return val
         },
         filteredOptions () {
@@ -449,7 +457,6 @@ const Select = {
                     }
                 }
             }
-            // 性能瓶颈!!!
             if (this.vm.length < 4) {
                 var foundItems = []
                 for (var i = 0; i < this.optionsLen; i++) {
@@ -491,6 +498,7 @@ const Select = {
                 if (this.type === '__NOTINIT__' && Array.isArray(value)) {
                     this.type = 'Array'
                 }
+
                 if (this.type === '__NOTINIT__' && !Array.isArray(value)) {
                     // 不区分是字符串还是数字(很多时候其实是数字，但是初始化给了字符串比如ls里取的)
                     this.type = 'noArray' 
@@ -525,9 +533,19 @@ const Select = {
             deep: true,
             immediate: true,
             handler (vm) {
+                if (!Array.isArray(vm)) {
+                    console.warn('[vc-select warn]: should be Array')
+                    return
+                }
+
+                if (vm.length === 0) {
+                    this.selectedOptions = []
+                    return
+                }
                 if (vm.length > this.limit) {
                     this.showNotify = true
-                    this.vm.pop()
+                    this.vm = this.vm.slice(0, this.limit)
+                    this.reWriteValue()
                     setTimeout(() => {
                         this.showNotify = false
                     }, 1000)
@@ -564,24 +582,27 @@ const Select = {
         includes (val) {
             if (Array.isArray(this.vm)) {
                 return this.vm.some((item, index) => {
-                    return item == val // 非严格类型匹配,替换模板中使用原生indexOf
+                    return String(item) === String(val) // 非严格类型匹配,替换模板中使用原生indexOf
                 })
             }
         },
+        /*
+         * 每次vm有变化的时候需要reWrite value
+         */
         reWriteValue () {
             if (this.type === 'Array') {
-                this.value = this.vm
+                this.value = this.vm.slice(0)
             } else {
                 if (this.vm.length === 1) {
-                    this.value = this.vm[0]
+                    this.value = this.vm.slice(0)[0]
                 } else if (this.vm.length > 1) {
-                    this.value = this.vm.join(',')
+                    this.value = this.vm.slice(0).join(',')
                 } else {
                     // 0809: fix vm = [] bug, not trigger to reWrite value
                     this.value = ''
                 }
             }
-            this.$parent.value = this.value.slice(0)
+            // this.$parent.value = this.value.slice(0)
         },
         // 在立即同步模式下，最后会调用reWriteValue方法将vm同步至value
         select (v, disabled) {
@@ -644,7 +665,13 @@ const Select = {
             this.onSelect && this.onSelect()
 
             // core: 回写value
-            if (!this.lazy) {
+            if (this.showSelectAllOption && (this.selectAllBehavior === 'semantic')) {
+                if (!this.lazy) {
+                    console.warn('[vc-select warn]: `semantic` 模式下必须选择 `lazy` 模式来同步value')
+                    return
+                } 
+            }
+            if (!this.lazy || !this.show) { // `tags`模式下直接删除要同步vm, update 1215
                 this.reWriteValue()
             }
         },

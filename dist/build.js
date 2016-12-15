@@ -484,7 +484,7 @@ exports = module.exports = __webpack_require__(3)();
 
 
 // module
-exports.push([module.i, ".vc-select-component label.label-item {\n  position: relative;\n  top: 7px;\n  vertical-align: top;\n  display: inline-block;\n}\n.vc-select-component .bs-searchbox {\n  padding: 4px 8px;\n  position: relative;\n}\n.vc-select-component .bs-searchbox input {\n  height: 34px;\n  width: 100%;\n}\n.vc-select-component .bs-searchbox .clear-search-text {\n  visibility: hidden;\n  position: absolute;\n  right: 15px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  opacity: .3;\n}\n.vc-select-component .bs-searchbox:hover .clear-search-text {\n  visibility: visible;\n}\n.vc-select-component .btn-group button.multiselect {\n  /* override multiselect button height */\n  padding: 2px 6px;\n  min-height: 34px;\n  width: 100%;\n  overflow: hidden;\n  margin: 0;\n  color: #666;\n  white-space: normal;\n  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n}\n.vc-select-component .btn-group button.multiselect.text-to-left {\n  text-align: left;\n}\n.vc-select-component .btn-group button.multiselect:hover {\n  background-color: #fff;\n  border: 1px solid #A79F9F;\n}\n.vc-select-component .btn-group button.multiselect:active {\n  background-color: #fff;\n  border: 1px solid #ccc;\n  box-shadow: none;\n}\n.vc-select-component .btn-group button.multiselect:focus {\n  background-color: #fff;\n  border: 1px solid #ccc;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item {\n  display: inline-block;\n  text-align: left;\n  line-height: 16px;\n  color: inherit;\n  font-size: 12px;\n  position: relative;\n  cursor: pointer;\n  padding: 0 5px 1px;\n  margin-right: 5px;\n  margin-bottom: 2px;\n  background-color: #f3f3f3;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item:hover {\n  text-decoration: none;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item span {\n  width: 5px;\n  height: 5px;\n  color: #999;\n  font-weight: 700;\n  padding: 3px 2px 3px 1px;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item span:hover {\n  color: #404040;\n}\n.vc-select-component .btn-group .dropdown-menu {\n  min-width: 100%;\n  overflow: auto;\n  width: auto;\n}\n.vc-select-component .btn-group .dropdown-menu > li {\n  cursor: pointer;\n}\n.vc-select-component .btn-group .dropdown-menu > li.disabled {\n  opacity: .6;\n  cursor: not-allowed;\n}\n.vc-select-component .btn-group .dropdown-menu > li > a:hover {\n  background-color: #1E90FF;\n  color: #fff;\n}\n.vc-select-component .btn-group .dropdown-menu .no-content-tips {\n  text-align: center;\n  padding: 10px;\n}\n.vc-select-component .btn-group .dropdown-menu .notify {\n  position: absolute;\n  bottom: 5px;\n  width: 96%;\n  margin: 0 2%;\n  min-height: 26px;\n  padding: 3px 5px;\n  background: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  pointer-events: none;\n  opacity: .9;\n}\n", ""]);
+exports.push([module.i, ".vc-select-component label.label-item {\n  position: relative;\n  top: 7px;\n  vertical-align: top;\n  display: inline-block;\n}\n.vc-select-component .bs-searchbox {\n  padding: 4px 8px;\n  position: relative;\n}\n.vc-select-component .bs-searchbox input {\n  height: 34px;\n  width: 100%;\n}\n.vc-select-component .bs-searchbox .clear-search-text {\n  visibility: hidden;\n  position: absolute;\n  right: 15px;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  opacity: .3;\n}\n.vc-select-component .bs-searchbox:hover .clear-search-text {\n  visibility: visible;\n}\n.vc-select-component .btn-group .notify {\n  z-index: 9999;\n  position: absolute;\n  top: 42px;\n  width: 99%;\n  margin: 0 auto;\n  min-height: 26px;\n  padding: 3px 5px;\n  background: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  border-radius: 3px 3px 0 0;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  pointer-events: none;\n  opacity: .9;\n}\n.vc-select-component .btn-group button.multiselect {\n  /* override multiselect button height */\n  padding: 2px 6px;\n  min-height: 34px;\n  width: 100%;\n  overflow: hidden;\n  margin: 0;\n  color: #666;\n  white-space: normal;\n  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);\n}\n.vc-select-component .btn-group button.multiselect.text-to-left {\n  text-align: left;\n}\n.vc-select-component .btn-group button.multiselect:hover {\n  background-color: #fff;\n  border: 1px solid #A79F9F;\n}\n.vc-select-component .btn-group button.multiselect:active {\n  background-color: #fff;\n  border: 1px solid #ccc;\n  box-shadow: none;\n}\n.vc-select-component .btn-group button.multiselect:focus {\n  background-color: #fff;\n  border: 1px solid #ccc;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item {\n  display: inline-block;\n  text-align: left;\n  line-height: 16px;\n  color: inherit;\n  font-size: 12px;\n  position: relative;\n  cursor: pointer;\n  padding: 0 5px 1px;\n  margin-right: 5px;\n  margin-bottom: 2px;\n  background-color: #f3f3f3;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item:hover {\n  text-decoration: none;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item span {\n  width: 5px;\n  height: 5px;\n  color: #999;\n  font-weight: 700;\n  padding: 3px 2px 3px 1px;\n}\n.vc-select-component .btn-group button.multiselect a.vc-selected-item span:hover {\n  color: #404040;\n}\n.vc-select-component .btn-group button.multiselect .btn-content {\n  white-space: nowrap;\n}\n.vc-select-component .btn-group .dropdown-menu {\n  min-width: 100%;\n  overflow: auto;\n  width: auto;\n}\n.vc-select-component .btn-group .dropdown-menu > li {\n  cursor: pointer;\n}\n.vc-select-component .btn-group .dropdown-menu > li.disabled {\n  opacity: .6;\n  cursor: not-allowed;\n}\n.vc-select-component .btn-group .dropdown-menu > li > a:hover {\n  background-color: #1E90FF;\n  color: #fff;\n}\n.vc-select-component .btn-group .dropdown-menu .no-content-tips {\n  text-align: center;\n  padding: 10px;\n}\n", ""]);
 
 // exports
 
@@ -499,7 +499,7 @@ module.exports = "<li @mousedown.stop.prevent=\"handleClick\" v-show=\"show\" cl
 /* 10 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"vc-select-component form-group\">\n        <label class=\"label-item\" v-if=\"label\">{{ label }}</label>\n        <div class=\"btn-group\" :class=\"{ 'open': show }\" :style=\"{ 'width': optionalWidth }\">\n            <button v-el:btn type=\"button\" :class=\"{ 'text-to-left': !showPlaceholder && tags }\" class=\"btn btn-default multiselect dropdown-toggle btn-multipe\"\n                @click=\"toggleDropdown\"\n                @mousedown.stop\n                @blur=\"show = (searchable ? show : false)\"\n                :disabled=\"disabled\"\n                :readonly=\"readonly\"\n                :title=\"selectedItems || placeholder\"\n            >\n                <a class=\"vc-selected-item\" v-for=\"option in selectedOptions\" v-show=\"tags\" @mousedown.stop>\n                    {{ option.label }}\n                    <span @mousedown=\"select(option.value)\" v-show=\"includes(option.value)\">&times;</span>\n                </a>\n                <span class=\"btn-placeholder\" v-show=\"showPlaceholder\">{{ placeholder }}</span>\n                <span class=\"caret\" v-show=\"showPlaceholder\"></span>\n                <span class=\"btn-content\" v-show=\"!tags\">{{ selectedItems }}</span>\n            </button>\n            <ul class=\"dropdown-menu\" :style=\"{ 'max-height': optionalHeight }\" @mousedown.stop> <!-- make scrollbar draggable -->\n                <li v-if=\"optionsLen && searchable\" class=\"bs-searchbox\">\n                    <input type=\"text\" @mousedown.stop v-model=\"searchText\" placeholder=\"搜索\" class=\"form-control\" autocomplete=\"off\" />\n                    <span @mousedown.stop=\"searchText = ''\" class=\"clear-search-text glyphicon glyphicon-remove-circle\" aria-hidden=\"true\"></span>\n                </li>\n                <li v-if=\"optionsLen && showSelectAllOption\">\n                    <a @mousedown.stop.prevent=\"select(selectAllOptionValue)\">\n                        {{ selectAllOptionLabel }} \n                        <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(selectAllOptionValue)\"></span>\n                    </a>\n                </li>\n                <!-- default vc-option slot -->\n                <slot>\n                <template v-for=\"($index, option) in filteredOptions\">\n                <li @mousedown.stop.prevent=\"select(option.value, option.disabled)\" :class=\"{ 'disabled': option.disabled }\">\n                    <a>\n                        {{ option.label }}\n                        <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(option.value)\"></span>\n                    </a>\n                </li>\n                </template>\n                </slot>\n                <slot v-if=\"!optionsLen\" name=\"noContent\"><div class=\"no-content-tips\">暂无{{ label }}选项</div></slot>\n                <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">(最多选取{{ limit }}个)</div>\n            </ul>\n        </div>\n    </div>";
+module.exports = "<div class=\"vc-select-component form-group\">\n        <label class=\"label-item\" v-if=\"label\">{{ label }}</label>\n        <div class=\"btn-group\" :class=\"{ 'open': show }\" :style=\"{ 'width': optionalWidth }\">\n            <button v-el:btn type=\"button\" :class=\"{ 'text-to-left': !showPlaceholder && tags }\" class=\"btn btn-default multiselect dropdown-toggle btn-multipe\"\n                @click=\"toggleDropdown\"\n                @mousedown.stop\n                @blur=\"show = (searchable ? show : false)\"\n                :disabled=\"disabled\"\n                :readonly=\"readonly\"\n                :title=\"selectedItems || placeholder\"\n            >\n                <a class=\"vc-selected-item\" v-for=\"option in selectedOptions\" v-show=\"tags\" @mousedown.stop>\n                    {{ option.label }}\n                    <span @mousedown=\"select(option.value)\" v-show=\"includes(option.value)\">&times;</span>\n                </a>\n                <span class=\"btn-placeholder\" v-show=\"showPlaceholder\">{{ placeholder }}</span>\n                <span class=\"caret\" v-show=\"showPlaceholder\"></span>\n                <span class=\"btn-content\" v-show=\"!tags\">{{ selectedItems }}</span>\n            </button>\n            <div class=\"notify\" v-show=\"showNotify\" transition=\"fadein\">最多选取{{ limit }}项!</div>\n            <ul class=\"dropdown-menu\" :style=\"{ 'max-height': optionalHeight }\" @mousedown.stop> <!-- make scrollbar draggable -->\n                <li v-if=\"optionsLen && searchable\" class=\"bs-searchbox\">\n                    <input type=\"text\" @mousedown.stop v-model=\"searchText\" placeholder=\"搜索\" class=\"form-control\" autocomplete=\"off\" />\n                    <span @mousedown.stop=\"searchText = ''\" class=\"clear-search-text glyphicon glyphicon-remove-circle\" aria-hidden=\"true\"></span>\n                </li>\n                <li v-if=\"optionsLen && showSelectAllOption\">\n                    <a @mousedown.stop.prevent=\"select(selectAllOptionValue)\">\n                        {{ selectAllOptionLabel }} \n                        <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(selectAllOptionValue)\"></span>\n                    </a>\n                </li>\n                <!-- default vc-option slot -->\n                <slot>\n                <template v-for=\"($index, option) in filteredOptions\">\n                <li @mousedown.stop.prevent=\"select(option.value, option.disabled)\" :class=\"{ 'disabled': option.disabled }\">\n                    <a>\n                        {{ option.label }}\n                        <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"includes(option.value)\"></span>\n                    </a>\n                </li>\n                </template>\n                </slot>\n                <slot v-if=\"!optionsLen\" name=\"noContent\"><div class=\"no-content-tips\">暂无{{ label }}</div></slot>\n            </ul>\n        </div>\n    </div>";
 
 /***/ },
 /* 11 */
@@ -572,7 +572,7 @@ exports.default = {
                 return;
             }
             return this.$parent.filteredOptions.some(function (item) {
-                return item['value'] === _this.value;
+                return String(item['value']) === String(_this.value);
             });
         },
         checked: function checked() {
@@ -583,7 +583,7 @@ exports.default = {
         handleClick: function handleClick() {
             if (this.d) return;
             var parent = this.$parent;
-            if (parent.multiple && parent.value != null) {
+            if (parent.multiple && parent.value != void 0) {
                 var v = void 0;
                 if (!Array.isArray(parent.value)) {
                     v = parent.value.split(',');
@@ -646,6 +646,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                 <span class="caret" v-show="showPlaceholder"></span>
 //                 <span class="btn-content" v-show="!tags">{{ selectedItems }}</span>
 //             </button>
+//             <div class="notify" v-show="showNotify" transition="fadein">最多选取{{ limit }}项!</div>
 //             <ul class="dropdown-menu" :style="{ 'max-height': optionalHeight }" @mousedown.stop> <!-- make scrollbar draggable -->
 //                 <li v-if="optionsLen && searchable" class="bs-searchbox">
 //                     <input type="text" @mousedown.stop v-model="searchText" placeholder="搜索" class="form-control" autocomplete="off" />
@@ -668,14 +669,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                 </li>
 //                 </template>
 //                 </slot>
-//                 <slot v-if="!optionsLen" name="noContent"><div class="no-content-tips">暂无{{ label }}选项</div></slot>
-//                 <div class="notify" v-show="showNotify" transition="fadein">(最多选取{{ limit }}个)</div>
+//                 <slot v-if="!optionsLen" name="noContent"><div class="no-content-tips">暂无{{ label }}</div></slot>
 //             </ul>
 //         </div>
 //     </div>
 // </template>
 
 // <style lang="less">
+// @height: 34px;
 // .vc-select-component {
 
 //     label.label-item {
@@ -690,7 +691,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //         // 保证清除按钮的居中
 //         input {
-//             height: 34px;
+//             height: @height;
 //             width: 100%; // 撑开宽度
 //         }
 
@@ -710,9 +711,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //     }
 
 //     .btn-group {
+//         .notify {
+//             z-index: 9999;
+//             position: absolute;
+//             top: 42px;
+//             width: 99%;
+//             margin: 0 auto;
+//             min-height: 26px;
+//             padding: 3px 5px;
+//             background: #f5f5f5;
+//             border: 1px solid #e3e3e3;
+//             border-radius: 3px 3px 0 0;
+//             box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+//             pointer-events: none;
+//             opacity: .9;
+//         }
 //         button.multiselect { /* override multiselect button height */
 //             padding: 2px 6px;
-//             min-height: 34px;
+//             min-height: @height;
 //             width: 100%;
 //             overflow: hidden;
 //             margin: 0;
@@ -770,6 +786,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                     }
 //                 }
 //             }
+//             .btn-content {
+//                 white-space: nowrap;
+//             }
 //         }
 //         .dropdown-menu {
 //             min-width: 100%; // override bootstrap 160px
@@ -796,21 +815,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //                 text-align: center;
 //                 padding: 10px;
 //             }
-
-//             .notify {
-//                 position: absolute;
-//                 bottom: 5px;
-//                 width: 96%;
-//                 margin: 0 2%;
-//                 min-height: 26px;
-//                 padding: 3px 5px;
-//                 background: #f5f5f5;
-//                 border: 1px solid #e3e3e3;
-//                 box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-//                 pointer-events: none;
-//                 opacity: .9;
-//             }
-//         }
+//         } // .dropdown-menu
 //     } // .btn-group
 // } // component
 // </style>
@@ -839,6 +844,7 @@ var Select = {
             twoWay: true,
             type: [Array, String, Number] // 内部会记录下初始化类型快照，用于反同步，只区分Array, 非Array
         },
+        // 是否是标签式列出所选项
         tags: {
             type: Boolean,
             default: false
@@ -858,11 +864,11 @@ var Select = {
             type: Boolean,
             default: false
         },
-        // 选项: Array是目标类型，Object也支持转换，但是Array必须为Array<Object{ value: label }>
+        // 选项: Array是目标类型，Object也支持转换，但是Array必须为Array<Object{ value, label, disabled }>
         options: {
             type: [Array, Object]
         },
-        // 用于区分下拉选择的值的同步模式(时机)
+        // 用于区分下拉选择的值的同步模式(是点选就同步还是下拉关闭才同步)
         lazy: {
             type: Boolean,
             default: false
@@ -872,7 +878,7 @@ var Select = {
             type: Boolean,
             default: false
         },
-        // 是否可搜索，只有在 `options` 提供才可以
+        // 是否可搜索
         searchable: {
             type: Boolean,
             default: false
@@ -882,7 +888,7 @@ var Select = {
             type: Number,
             default: 1024
         },
-        // 选择后自动关闭下拉,仅作用在单选
+        // 选择后自动关闭下拉，仅作用在单选
         closeOnSelect: {
             type: Boolean,
             default: false
@@ -890,7 +896,7 @@ var Select = {
         // 选择按钮宽度，不包括label部分 
         width: {
             type: [Number, String],
-            default: '200'
+            default: '150'
         },
         // 下拉列表高度
         height: {
@@ -902,17 +908,18 @@ var Select = {
             type: Boolean,
             default: false
         },
-        // 全选的文案
+        // 全部选项的文案
         selectAllOptionLabel: {
             type: String,
             default: '全部'
         },
-        // 重要! 传给后端的key值，有默认值，初始化传入自动全选，可配置来避免冲突
+        // ‘全部'选项的值
+        // 重要! 传给后端的key值，有默认值，可配置来避免冲突，初始化传入会自动全选
         selectAllOptionValue: {
             type: String,
             default: '__all__'
         },
-        // 是全部选项被选中还是语义上选中前后端约定的key，默认是全部选中
+        // 是真正全部选项被选中还是语义上选中前后端约定的key，默认是全部选中
         selectAllBehavior: {
             type: String,
             default: 'allChecked' // ['allChecked', 'semantic'] 全选行为上可以是真正全部选项选中或语义上的选中'全部'这一项
@@ -943,7 +950,7 @@ var Select = {
 
         // watch immediate已经确保了转换和类型确定
         if (!Array.isArray(this.vm)) {
-            console.warn('[vcSelect warn]: vm should be Array but now: ' + _typeof(this.vm));
+            console.warn('[vc-select warn]: vm should be Array but now: ' + _typeof(this.vm));
             return;
         }
         // 再做一些转换，防止意外
@@ -952,6 +959,7 @@ var Select = {
         } else if (this.multiple && this.vm.length > this.limit) {
             this.vm = this.vm.slice(0, this.limit);
         }
+        this.reWriteValue();
 
         // 绑定点击空白处下拉选择框消失事件, 20160508改为监听mousedown(同时修改了模板), 让mousedown传递出去，
         // 因为mousedown先于click触发，这样就不能同时打开多个下拉菜单了,
@@ -1006,7 +1014,7 @@ var Select = {
             }
 
             // Other: return it for debug
-            console.warn('[vcSelect warn]: maybe invalid options! => ', val);
+            console.warn('[vc-select warn]: maybe invalid options! => ', val);
             return val;
         },
         filteredOptions: function filteredOptions() {
@@ -1077,7 +1085,6 @@ var Select = {
                     }
                 }
             }
-            // 性能瓶颈!!!
             if (this.vm.length < 4) {
                 var foundItems = [];
                 for (var i = 0; i < this.optionsLen; i++) {
@@ -1119,6 +1126,7 @@ var Select = {
                 if (this.type === '__NOTINIT__' && Array.isArray(value)) {
                     this.type = 'Array';
                 }
+
                 if (this.type === '__NOTINIT__' && !Array.isArray(value)) {
                     // 不区分是字符串还是数字(很多时候其实是数字，但是初始化给了字符串比如ls里取的)
                     this.type = 'noArray';
@@ -1155,9 +1163,19 @@ var Select = {
             handler: function handler(vm) {
                 var _this4 = this;
 
+                if (!Array.isArray(vm)) {
+                    console.warn('[vc-select warn]: should be Array');
+                    return;
+                }
+
+                if (vm.length === 0) {
+                    this.selectedOptions = [];
+                    return;
+                }
                 if (vm.length > this.limit) {
                     this.showNotify = true;
-                    this.vm.pop();
+                    this.vm = this.vm.slice(0, this.limit);
+                    this.reWriteValue();
                     setTimeout(function () {
                         _this4.showNotify = false;
                     }, 1000);
@@ -1196,24 +1214,28 @@ var Select = {
         includes: function includes(val) {
             if (Array.isArray(this.vm)) {
                 return this.vm.some(function (item, index) {
-                    return item == val; // 非严格类型匹配,替换模板中使用原生indexOf
+                    return String(item) === String(val); // 非严格类型匹配,替换模板中使用原生indexOf
                 });
             }
         },
+
+        /*
+         * 每次vm有变化的时候需要reWrite value
+         */
         reWriteValue: function reWriteValue() {
             if (this.type === 'Array') {
-                this.value = this.vm;
+                this.value = this.vm.slice(0);
             } else {
                 if (this.vm.length === 1) {
-                    this.value = this.vm[0];
+                    this.value = this.vm.slice(0)[0];
                 } else if (this.vm.length > 1) {
-                    this.value = this.vm.join(',');
+                    this.value = this.vm.slice(0).join(',');
                 } else {
                     // 0809: fix vm = [] bug, not trigger to reWrite value
                     this.value = '';
                 }
             }
-            this.$parent.value = this.value.slice(0);
+            // this.$parent.value = this.value.slice(0)
         },
 
         // 在立即同步模式下，最后会调用reWriteValue方法将vm同步至value
@@ -1279,7 +1301,14 @@ var Select = {
             this.onSelect && this.onSelect();
 
             // core: 回写value
-            if (!this.lazy) {
+            if (this.showSelectAllOption && this.selectAllBehavior === 'semantic') {
+                if (!this.lazy) {
+                    console.warn('[vc-select warn]: `semantic` 模式下必须选择 `lazy` 模式来同步value');
+                    return;
+                }
+            }
+            if (!this.lazy || !this.show) {
+                // `tags`模式下直接删除要同步vm, update 1215
                 this.reWriteValue();
             }
         },

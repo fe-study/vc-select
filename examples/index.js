@@ -3,7 +3,7 @@ import vcSelect from '../src/Select'
 const vcOption = vcSelect.vcOption
 // console.log(vcSelect, vcOption)
 
-function parseURL(url) {
+function parseURL (url) {
     var a =  document.createElement('a');
     a.href = url;
     return {
@@ -70,7 +70,7 @@ new Vue({
             selectAllOptionValue: '__all__',
             selectAllOptionLabel: '全部',
             selectAllBehavior: 'allChecked',
-            tags: true
+            tags: false 
 		}
 	},
     created () {
@@ -92,7 +92,7 @@ new Vue({
             console.log('select hide')
         },
         onSelect (...args) { // with arguments
-            console.log(args)
+            // console.log(args)
         },
         lazyTrueFn () {
             this.lazy = true
