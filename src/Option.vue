@@ -57,7 +57,7 @@ export default {
                 return
             }
             return this.$parent.filteredOptions.some((item) => {
-                return item['value'] === this.value
+                return String(item['value']) === String(this.value)
             })
         },
         checked () {
@@ -68,11 +68,11 @@ export default {
         handleClick () {
             if (this.d) return
             const parent = this.$parent
-            if (parent.multiple && parent.value != null) {
+            if (parent.multiple && parent.value != void 0) {
                 let v
                 if (!Array.isArray(parent.value)) {
                     v = parent.value.split(',') 
-                    v = v.filter(item => item !=='')
+                    v = v.filter(item => item !== '')
                     const index = v.indexOf(this.value)
                     v[~index ? '$remove' : 'push'](this.value)
                     parent.value = v.join(',')

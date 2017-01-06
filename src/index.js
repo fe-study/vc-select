@@ -1,4 +1,10 @@
 import vcSelect from './Select'
 
+const vcOption = vcSelect.vcOption
+
 export default vcSelect
-export { vcSelect }
+
+export { 
+    vcSelect,
+    vcOption
+}
